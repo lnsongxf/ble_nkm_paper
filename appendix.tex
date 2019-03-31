@@ -1,0 +1,724 @@
+\section*{Appendix}
+\begin{appendix}
+
+\section{Mean of the rational expectations equilibrium}
+\label{appA}
+Using (\ref{xf1}-\ref{div2}) and  (\ref{reec0}-\ref{reec3}) the mean satisfies
+ \begin{eqnarray*}
+ \overline{\bf x^*}&=&({\pmb I}-{\pmb c}_1)^{-1}(\pmb{c}_0+{\pmb c}_2\overline {\pmb u})\\
+ &=&({\pmb I}-{\pmb c}_1)^{-1}({\pmb I}-{\pmb b}_1{\pmb c}_1-{\pmb b}_1)^{-1}({\pmb b}_0+{\pmb b}_1{\pmb c}_2{\pmb a})+({\pmb I}-{\pmb c}_1)^{-1}{\pmb c}_2({\pmb I}-{\pmb\rho})^{-1}{\pmb a}\\
+ &=&({\pmb I}-{\pmb c}_1)^{-1}({\pmb I}-{\pmb b}_1{\pmb c}_1-{\pmb b}_1)^{-1}[{\pmb b}_0+({\pmb b}_1{\pmb c}_2({\pmb I}-{\pmb\rho})+({\pmb I}-{\pmb b}_1{\pmb c}_1-{\pmb b}_1){\pmb c}_2)({\pmb I}-{\pmb\rho})^{-1}{\pmb a}]\\
+ &=&[({\pmb I}-{\pmb b}_1{\pmb c}_1-{\pmb b}_1)({\pmb I}-{\pmb c}_1)]^{-1}[{\pmb b}_0+{\pmb b}_3({\pmb I}-{\pmb\rho})^{-1}{\pmb a}]\\
+  &=&({\pmb I}-{\pmb b}_1-{\pmb b}_2)^{-1}[{\pmb b}_0+{\pmb b}_3({\pmb I}-{\pmb\rho})^{-1}{\pmb a}].
+\end{eqnarray*}
+
+
+\section{Autocorrelation in the $n$-dimensional case}\label{ACFn}
+The purpose of this appendix is to show that the first-order autocorrelation coefficients of the stochastic stationary system (\ref{xfalm}) are continuous functions with respect to $(\beta_1, \beta_2, \cdots,\beta_n)$ and the other related parameters. Rewrite model (\ref{xfalm}) as
+\begin{equation}\label{modelmpn1}
+    \left\{
+    \begin{split}
+            {\pmb x}_{t}-{\pmb{\overline x}}&=({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)({\pmb x}_{t-1}-{\pmb{ \overline x}})+{\pmb b}_3({\pmb u}_t-{\pmb{ \overline u}})+{\pmb b}_4{\pmb v}_t,\\
+            {\pmb u}_{t}-{\pmb {\overline u}}&={\pmb\rho} ({\pmb u}_{t-1}-{\pmb{\overline u}})+{\pmb\varepsilon}_t.
+    \end{split}
+    \right.
+    \end{equation}
+That is,
+
+\begin{equation}\label{modelmpn2}
+     \left\{
+    \begin{split}
+           {\pmb x}_{t}- {\pmb{\overline x}}&= ({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)( {\pmb x}_{t-1}- {\pmb{\overline x}})+ {\pmb b}_3 {\pmb\rho}({\pmb u}_{t-1}-{\pmb{\overline u}})+{\pmb b}_3{\pmb\varepsilon}_t+{\pmb b}_4{\pmb v}_t,\\
+            {\pmb u}_{t}-{\pmb{\overline u}}&={\pmb\rho} ({\pmb u}_{t-1}-{\pmb {\overline u}})+{\pmb\varepsilon}_t.
+    \end{split}
+    \right.
+    \end{equation}
+
+\begin{eqnarray}\label{cormp1}
+{\pmb\Gamma}(-1)&=&E[({\pmb x}_t-{\pmb{\overline x}})({\pmb x}_{t-1}-{\pmb{\overline x}})']\nonumber\\
+&=&E\Big[({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)({\pmb x}_{t-1}-{\pmb{\overline
+x}})({\pmb x}_{t-1}-{\pmb{\overline
+x}})'+{\pmb b}_3{\pmb\rho}({\pmb u}_{t-1}-{\pmb{\overline
+u}})({\pmb x}_{t-1}-{\pmb{\overline x}})'+{\pmb b}_3{\pmb\varepsilon}_t({\pmb x}_{t-1}-{\pmb {\overline x}})'\nonumber\\
+&&+{\pmb b}_4{\pmb v}_t({\pmb x}_{t-1}-{\pmb{\overline x}})'\Big]\nonumber\\
+&=&({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2){\pmb \Gamma}(0)+{\pmb b}_3{\pmb\rho}E[({\pmb u}_{t-1}-{\pmb{\overline
+u}})({\pmb x}_{t-1}-{\pmb{\overline x}})']\nonumber\\
+&=&({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2){\pmb\Gamma}(0)+{\pmb b}_3{\pmb\rho}E[({\pmb u}_{t}-{\pmb{\overline
+u}})({\pmb x}_{t}-{\pmb{\overline x}})'].
+\end{eqnarray}
+\begin{eqnarray}\label{varmp1}
+{\pmb \Gamma}(0)&=&E[({\pmb x}_t-{\pmb{\overline x}})({\pmb x}_{t}-{\pmb{\overline x}})']\nonumber\\
+&=&E\Big[({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)({\pmb x}_{t-1}-{\pmb{\overline
+x}})({\pmb x}_{t}-{\pmb{\overline
+x}})'+{\pmb b}_3{\pmb\rho}({\pmb u}_{t-1}-{\pmb{\overline
+u}})({\pmb x}_{t}-{\pmb{\overline x}})'+{\pmb b}_3{\pmb\varepsilon}_t({\pmb x}_{t}-{\pmb {\overline x}})'+{\pmb b}_4{\pmb v}_t({\pmb x}_{t}-{\pmb{\overline x}})'\Big]\nonumber\\
+&=&({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2){\pmb\Gamma}(1)+{\pmb b}_3{\pmb\rho}E[({\pmb u}_{t-1}-{\pmb{\overline
+u}})({\pmb x}_{t}-{\pmb{\overline x}})']+{\pmb b}_3 E[{\pmb\varepsilon}_t({\pmb x}_{t}-{\pmb {\overline x}})']+{\pmb b}_4E[{\pmb v}_t({\pmb x}_{t}-{\pmb{\overline x}})']\nonumber\\
+&=&({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2){\pmb\Gamma}(1)+{\pmb b}_3{\pmb\rho}E[({\pmb u}_{t-1}-{\pmb{\overline
+u}})({\pmb x}_{t}-{\pmb{\overline x}})']+{\pmb b}_3 {\pmb\Sigma}_{\pmb\varepsilon}{\pmb b}_3'+ {\pmb b}_4{\pmb\Sigma}_{\pmb v}{\pmb b}'_4.
+\end{eqnarray}
+Note that
+$E[{\pmb\varepsilon}_t({\pmb x}_{t}-{\pmb {\overline x}})']=E\Big[{\pmb\varepsilon}_t(({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)({\pmb x}_{t-1}-{\pmb{\overline
+x}}))'+{\pmb\varepsilon}_t({\pmb b}_3{\pmb\rho}({\pmb u}_{t-1}-{\pmb{\overline
+u}}))'+{\pmb\varepsilon}_t({\pmb b}_3{\pmb\varepsilon}_t)'+{\pmb\varepsilon}_t({{\pmb b}_4\pmb v}_t)'\Big]={\pmb\Sigma}_{\pmb\varepsilon}{\pmb b}_3'$
+and
+$E[{\pmb v}_t({\pmb x}_{t}-{\pmb {\overline x}})']=E\Big[{\pmb v}_t(({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)({\pmb x}_{t-1}-{\pmb{\overline
+x}}))'+{\pmb v}_t({\pmb b}_3{\pmb\rho}({\pmb u}_{t-1}-{\pmb{\overline
+u}}))'+{\pmb v}_t({\pmb b}_3{\pmb\varepsilon}_t)'+{\pmb b}_4{\pmb v}_t({\pmb b}_4{\pmb v}_t)'\Big]={\pmb b}_4{\pmb\Sigma}_{\pmb v}{\pmb b}'_4$.
+
+Based on (\ref{cormp1}), (\ref{varmp1}) and ${\pmb\Gamma}(-1)={\pmb\Gamma}(1)'$,
+\begin{eqnarray*}
+{\pmb \Gamma}(0)&=&({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2){\pmb\Gamma}(0)({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)'+({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)E[({\pmb x}_{t}-{\pmb{\overline
+x}})({\pmb u}_{t}-{\pmb{\overline u}})']({\pmb b}_3{\pmb\rho})'\\
+&&+{\pmb b}_3{\pmb\rho}E[({\pmb u}_{t-1}-{\pmb{\overline
+u}})({\pmb x}_{t}-{\pmb{\overline x}})']+{\pmb b}_3 {\pmb\Sigma}_{\pmb\varepsilon}{\pmb b}_3'+ {\pmb b}_4{\pmb\Sigma}_{\pmb v}{\pmb b}'_4.
+\end{eqnarray*}
+In order to obtain the expression of ${\pmb \Gamma}(0)$, we use column stacks of matrices. Suppose $vec({\pmb K})$ is the vectorization of a matrix ${\pmb K}$ and $\otimes$ is the Kronecker product\footnote{One property of column stacks is that the column stack of a product of three matrices is $vec(ABC)=(C'\otimes A)vec(B)$. For more details on this and related properties, see Magnus and Neudecker(1988, Chapter 2) and Evans and Honkapohja (2001, Section 5.7).}. Under the assumption that all the eigenvalues of ${\pmb b}_1{\pmb\beta}^2$ are inside the unit circle, based on the property of Kronecker product\footnote{The eigenvalues of $\widehat{A}\otimes\widehat{B}$ are the $mn$ numbers $\lambda_r\mu_s, r=1,2,\cdots,m, s=1,2,\cdots,n$ where $\lambda_1,\cdots,\lambda_m$ are the eigenvalues of $m\times m$ matrix $\widehat{A}$ and $\mu_1,\cdots,\mu_n$ are the eigenvalues of $n\times n$ matrix $\widehat{B}$; see Lancaster and Tismenetsky (1985).}, it is easy to see all the eigenvalues of $({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)\otimes({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)$ lie inside the unit circle and hence $[{\pmb I}-({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)\otimes({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)]^{-1}$ exist.
+Therefore,
+\begin{eqnarray}\label{varmp2}
+vec({\pmb \Gamma}(0))&=&[{\pmb I}-({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)\otimes({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)]^{-1}[(({\pmb b}_3{\pmb\rho})\otimes ({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)) vec(E[({\pmb x}_{t}-{\pmb{\overline
+x}})({\pmb u}_{t}-{\pmb{\overline u}})'])\nonumber\\
+&&+({\pmb I}\otimes ({\pmb b}_3{\pmb\rho}))vec(E[({\pmb u}_{t-1}-{\pmb{\overline
+u}})({\pmb x}_{t}-{\pmb{\overline x}})'])+vec({\pmb b}_3 {\pmb\Sigma}_{\pmb\varepsilon}{\pmb b}_3'+ {\pmb b}_4{\pmb\Sigma}_{\pmb v}{\pmb b}'_4)].
+\end{eqnarray}
+ Thus in order to obtain ${\pmb \Gamma}(1)$ and
+${\pmb \Gamma}(0)$, we need calculate $E[({\pmb x}_{t}-{\pmb{\overline
+x}})({\pmb u}_{t}-{\pmb{\overline u}})']$ and $E[({\pmb u}_{t-1}-{\pmb{\overline
+u}})({\pmb x}_{t}-{\pmb{\overline x}})']$.
+\begin{eqnarray*}
+&&E[({\pmb x}_{t}-{\pmb{\overline
+x}})({\pmb u}_{t}-{\pmb{\overline u}})']\nonumber\\
+&=&E\Big[({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)({\pmb x}_{t-1}-{\pmb{\overline
+x}})({\pmb u}_{t}-{\pmb{\overline u}})'+{\pmb b}_3{\pmb\rho}({\pmb u}_{t-1}-{\pmb{\overline
+u}})({\pmb u}_{t}-{\pmb{\overline u}})'+{\pmb b}_3{\pmb\varepsilon}_t({\pmb u}_{t}-{\pmb{\overline u}})'+{\pmb b}_4{\pmb v}_t({\pmb u}_{t}-{\pmb{\overline u}})'\Big]\nonumber\\
+&=&E\Big[({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)({\pmb x}_{t-1}-{\pmb{\overline
+x}})[({\pmb u}_{t-1}-{\pmb{\overline u}})'{\pmb\rho}'+{\pmb\varepsilon}'_t]+{\pmb b}_3{\pmb\rho}({\pmb u}_{t-1}-{\pmb{\overline
+u}})[({\pmb u}_{t-1}-{\pmb{\overline u}})'{\pmb\rho}'+{\pmb\varepsilon}'_t]\nonumber\\
+&&+{\pmb b}_3{\pmb\varepsilon}_t[({\pmb u}_{t-1}-{\pmb{\overline u}})'{\pmb\rho}'+{\pmb\varepsilon}'_t]+{\pmb v}_t[({\pmb u}_{t-1}-{\pmb{\overline u}})'{\pmb\rho}'+{\pmb\varepsilon}'_t]\Big]\nonumber\\
+&=&({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)E[({\pmb x}_{t-1}-{\pmb{\overline
+x}})({\pmb u}_{t-1}-{\pmb{\overline u}})']{\pmb\rho}'+{\pmb b}_3{\pmb\rho}E[({\pmb u}_{t}-{\pmb{\overline
+u}})({\pmb u}_{t}-{\pmb{\overline u}})']{\pmb\rho}'+{\pmb b}_3{\pmb\Sigma_{\varepsilon}}.
+\end{eqnarray*}
+Correspondingly,
+\begin{eqnarray}\label{corpymp}
+&&vec(E[({\pmb x}_{t}-{\pmb{\overline
+x}})({\pmb u}_{t}-{\pmb{\overline u}})'])\nonumber\\
+&=&[{\pmb I}-{\pmb \rho}\otimes({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)]^{-1}[vec({\pmb b}_3{\pmb\rho}E[({\pmb u}_{t}-{\pmb{\overline
+u}})({\pmb u}_{t}-{\pmb{\overline u}})']{\pmb\rho}')+vec({\pmb b}_3{\pmb\Sigma_{\varepsilon}})]\nonumber\\
+&=&[{\pmb I}-{\pmb \rho}\otimes({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)]^{-1}[({\pmb\rho}\otimes({\pmb b}_3{\pmb\rho}))vec(E[({\pmb u}_{t}-{\pmb{\overline
+u}})({\pmb u}_{t}-{\pmb{\overline u}})'])+({\pmb I}\otimes{\pmb b}_3)vec{\pmb\Sigma_{\varepsilon}})]\nonumber\\
+&=&[{\pmb I}-{\pmb \rho}\otimes({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)]^{-1}[({\pmb\rho}\otimes({\pmb b}_3{\pmb\rho}))[{\pmb I}-{\pmb \rho}\otimes{\pmb \rho}]^{-1}+({\pmb I}\otimes{\pmb b}_3)]vec({\pmb \Sigma_{\varepsilon}}).
+\end{eqnarray}
+Furthermore,
+\begin{eqnarray*}
+&&E[({\pmb x}_{t}-{\pmb{\overline
+x}})({\pmb u}_{t-1}-{\pmb{\overline u}})']\nonumber\\
+&=&E\Big[({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)({\pmb x}_{t-1}-{\pmb{\overline
+x}})({\pmb u}_{t-1}-{\pmb{\overline u}})'+{\pmb b}_3{\pmb\rho}({\pmb u}_{t-1}-{\pmb{\overline
+u}})({\pmb u}_{t-1}-{\pmb{\overline u}})'+{\pmb b}_3{\pmb\varepsilon}_t({\pmb u}_{t-1}-{\pmb{\overline u}})'+{\pmb b}_4{\pmb v}_t({\pmb u}_{t-1}-{\pmb{\overline u}})'\Big]\nonumber\\
+&=&({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)E[({\pmb x}_{t}-{\pmb{\overline
+x}})({\pmb u}_{t}-{\pmb{\overline u}})']+{\pmb b}_3{\pmb\rho}E[({\pmb u}_{t}-{\pmb{\overline
+u}})({\pmb u}_{t}-{\pmb{\overline u}})'].
+\end{eqnarray*}
+Thus based on (\ref{corpymp}),
+\begin{eqnarray}\label{corpymp1}
+&&vec(E[({\pmb x}_{t}-{\pmb{\overline
+x}})({\pmb u}_{t-1}-{\pmb{\overline u}})'])\nonumber\\
+&=&({\pmb I}\otimes({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2))vec(E[({\pmb x}_{t}-{\pmb{\overline
+x}})({\pmb u}_{t}-{\pmb{\overline u}})'])+({\pmb I}\otimes({\pmb b}_3{\pmb\rho}))vec(E[({\pmb u}_{t}-{\pmb{\overline
+u}})({\pmb u}_{t}-{\pmb{\overline u}})'])\nonumber\\
+&=&({\pmb I}\otimes({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2))[{\pmb I}-{\pmb \rho}\otimes({\pmb b}_1 {\pmb\beta}^2+{\pmb b}_2)]^{-1}[({\pmb\rho}\otimes({\pmb b}_3{\pmb\rho}))[{\pmb I}-{\pmb \rho}\otimes{\pmb \rho}]^{-1}+({\pmb I}\otimes{\pmb b}_3)]vec({\pmb \Sigma_{\varepsilon}})\nonumber\\
+&&+({\pmb I}\otimes({\pmb b}_3{\pmb\rho}))[{\pmb I}-{\pmb \rho}\otimes{\pmb \rho}]^{-1}vec({\pmb \Sigma_{\varepsilon}}).
+\end{eqnarray}
+
+Therefore based on (\ref{corpymp1}), the expression of matrix $E[({\pmb x}_{t}-{\pmb{\overline
+x}})({\pmb u}_{t-1}-{\pmb{\overline u}})'$ can be obtained. Then by transposing the matrix $E[({\pmb x}_{t}-{\pmb{\overline
+x}})({\pmb u}_{t-1}-{\pmb{\overline u}})'$, we can obtain $vec(E[({\pmb u}_{t-1}-{\pmb{\overline u}})({\pmb x}_{t}-{\pmb{\overline
+x}})'])$. Furthermore, combining this with (\ref{corpymp}), we obtain the variance-covariance matrix ${\pmb \Gamma}(0)$ from (\ref{varmp2}) and further ${\pmb\Gamma}(1)$ from (\ref{cormp1}). Based  on the properties of matrices operations, it is easy to see that the entries of matrices ${\pmb \Gamma}(0)$ and ${\pmb\Gamma}(1)$ are smooth functions with respect to $(\beta_1, \beta_3, \cdots,\beta_n)$ and the other related parameters. Thus the first-order autocorrelation coefficients of the nontrivial stochastic stationary system (\ref{xfalm}) are continuous functions with respect to $(\beta_1, \beta_3, \cdots,\beta_n)$ and the other related parameters.
+
+
+\subsection*{Moments for the zero-mean case} \label{app2}
+
+%In this case the law of motion is given as: 
+%\begin{equation}
+% S_t = \bar{\gamma} + \gamma_1 S_{t-1} + \gamma_2 ( \boldsymbol\alpha_{t-1} + \boldsymbol\beta_{t-1}^2 (S_{t-1} - \boldsymbol\alpha_{t-1}))+\gamma_3 \eta_t  
+% \label{eqn:b_3}
+%\end{equation}
+%\noindent
+%Taking expectations on both sides yields: 
+%\begin{equation}
+% \mathbb{E} [S_t] = \bar{\gamma} + \gamma_1 \mathbb{E} [S_{t-1}] + \gamma_2 \boldsymbol\alpha_{t-1} + \gamma_2 \boldsymbol\beta_{t-1}^2 \mathbb{E} [S_{t-1}] -\gamma_2\boldsymbol\beta_{t-1}^2\boldsymbol\alpha_{t-1}+\gamma_3 \mathbb{E} [\eta_t] 
+%\label{eqn:b_4}
+%\end{equation}
+%\noindent
+%The i.i.d assumption on the shocks implies that the last two terms are zero. Through stationarity, we have $ \mathbb{E}[S_t]=\mathbb{E}[S_{t-1}]=\bar{S}$, and the first consistency requirement of a \textbf{BLE} imposes $\bar{S}=\boldsymbol \alpha_{t-1} = \boldsymbol \alpha$. Then: 
+%\begin{equation}
+%\bar{S}=\bar{\gamma}+\gamma_1\bar{S}+\gamma_2\bar{S}+\gamma_2\boldsymbol\beta_{t-1}^2\bar{S}-\gamma_2\boldsymbol\beta_{t-1}^2\bar{S}\label{eqn:b_3}
+%\end{equation}
+%which reduces to : 
+%\begin{equation}
+%\bar{S}=(I-\gamma_1-\gamma_2)^{-1}\bar{\gamma}\label{eqn:b_5}
+%\end{equation}
+%\noindent
+%The remainder is based on the assumption that $\boldsymbol\alpha_{t-1}=\boldsymbol \alpha=\bar{\gamma}=\bar{S}=0$, which is the case for both models considered in this paper, which reduces the law of motion to:
+Taking (\ref{eqn:2_9}) as the starting point and assuming $\bar{\gamma}=\pmb{0}$, we have 
+\begin{equation}
+S_t = \gamma_1 S_{t-1} + \gamma_2 \pmb{\beta}^2 S_{t-1} + \gamma_3 \eta_t
+\label{eqn:b_6}
+\end{equation}
+\noindent
+The first-order covariance matrix is given by: 
+\begin{equation}
+\mathbb{E} [S_t S_{t-1}]=(\gamma_1 + \gamma_2 \pmb{\beta}^2)\mathbb{E} [S_{t-1}S_{t-1}]+\gamma_3 \mathbb{E} [\eta_t S_{t-1}]
+\label{eqn:b_7}
+\end{equation}
+\noindent
+We have $\mathbb{E} [\eta_t S_{t-1}]=0$, while $\mathbb{E} [\eta_{t-1}S_{t-1}]=\mathbb{E} [\eta_{t-1}((\gamma_1+\gamma_2\pmb {\beta}^2)S_{t-1}+\gamma_3 \eta_t]=\gamma_3 \pmb{\Sigma_{\eta}}$. Further denoting $(\gamma_1 + \gamma_2 \pmb{\beta}^2)=M(\pmb{\beta})$, the first-order covariance matrix  $\mathbb{E} [S_tS_{t-1}]=\pmb{\Gamma}(-1)$ and the variance-covariance matrix $\mathbb{E} [S_t S_t]=\pmb{\Gamma}(0) $, the expression in (\ref{eqn:b_7}) reduces to: 
+\begin{equation}
+\pmb{\Gamma}(-1)=M(\pmb {\beta})\pmb{\Gamma}(0)
+\label{eqn:b_8}
+\end{equation}
+Taking the variance on both sides of (\ref{eqn:b_6}) yields: 
+\begin{equation}
+\pmb{\Gamma}(0)=M(\pmb{\beta})\pmb{\Gamma}(0) M(\pmb{\beta})'+\gamma_3\pmb{\Sigma_{\eta}}\gamma_3'\label{eqn:b_9}
+\end{equation}
+Vectorizing both sides implies:
+\begin{equation}
+Vec(\pmb{\Gamma}(0))=Vec(M(\pmb{\beta})\pmb{\Gamma}(0) M(\pmb{\beta})'+\gamma_3\pmb{\Sigma_{\eta}}\gamma_3')\label{eqn:b_10}
+\end{equation}
+Using $Vec(ABC)=(C'\otimes A)Vec(B)$, and $Vec(A+B)=Vec(A)+Vec(B)$, the expression above reduces to:
+\begin{equation}
+Vec(\pmb{\Gamma}(0))=(M(\pmb{ \beta})\otimes M(\pmb{ \beta}))Vec(\pmb{\Gamma}(0))+(\gamma_3 \otimes \gamma_3)Vec(\pmb{\Sigma_{\eta}})\label{eqn:b_11}
+\end{equation}
+Hence
+\begin{equation}
+Vec(\pmb{\Gamma}(0))=[I-M(\pmb{ \beta}) \otimes M(\pmb{\beta})]^{-1} (\gamma_3 \otimes \gamma_3)Vec(\pmb{\Sigma_{\eta}})\label{eqn:b_12}
+\end{equation}
+which yields (\ref{eqn:2_13}).
+\section{Proof of Proposition 2 (stability under SAC-learning)}\label{sac}
+Set $\gamma_t=(1+t)^{-1}$. For the state dynamics equations in
+(\ref{modelmpnsacx}) and (\ref{lr})\footnote{For convenience of
+theoretical analysis, one can set $\bf S_{t-1}=\bf R_t$.}, since all
+functions are smooth, the SAC-learning rule satisfies the conditions
+(A.1-A.3) of Section 6.2.1 in Evans and Honkapohja (2001, p.124).
+
+In order to check the conditions (B.1-B.2) of Section 6.2.1 in Evans
+and Honkapohja (2001, p.125), we rewrite the system in matrix form
+by
+$${\pmb X}_t=\widetilde{{\pmb A}}({\pmb\theta}_{t-1}){\pmb X}_{t-1}+\widetilde{{\pmb B}}({\pmb\theta}_{t-1}){\pmb W}_{t},$$ where
+${\pmb\theta}'_t=({\pmb\alpha}_t, {\pmb\beta}_t, {\pmb R}_t), {\pmb X}'_t=(1,{\pmb x}'_t,{\pmb x}'_{t-1},{\pmb u}'_t)$ and
+${\pmb W}'_t=(1,{\pmb v}'_t,{\pmb\varepsilon}'_t)$,
+\begin{eqnarray*}
+{\widetilde{\pmb A}({\pmb\theta})}=\left(\begin{array}{cccc}
+0&0&0&0\\
+\pmb{b_0+b_1(I-\beta^2)\alpha+b_2a}
+&\pmb{b_1\beta}^2&\bf0&\pmb{b_2\rho}\\
+\bf0&\bf I&\bf0&\bf0\\
+\bf a&\bf0&\bf0&{\pmb\rho}
+\end{array}\right),
+\end{eqnarray*}
+\begin{eqnarray*}
+{\widetilde{\pmb B}({\pmb\theta})}=\left(\begin{array}{ccc}
+1&  0& 0\\
+ \bf0&\bf I&\bf b_2\\
+ \bf0& \bf0& \bf0\\
+ \bf0& \bf0&\bf I
+\end{array}\right).
+\end{eqnarray*}
+ Based on the properties of eigenvalues, see e.g. Evans and Honkapohja (2001, p.117), all the eigenvalues of ${\widetilde{\pmb A}({\pmb\theta})}$ include $0$ (multiple $n+1$), the eigenvalues of $\pmb\rho$ and $\pmb{b_1\beta}^2$. Thus based on the assumptions, all the eigenvalues of ${\widetilde{\pmb A}({\pmb\theta})}$ lie inside the unit circle. Moreover, it is easy to see all the other conditions for Section 6.2.1 of Chapter 6 in Evans and Honkapohja (2001) are also satisfied.
+ 
+ Since ${\pmb x}_t$ is
+stationary, then the limits
+$$\sigma^2_i:=\lim_{t\to\infty}E(x_{i,t}-\alpha_i)^2,\quad\quad \sigma_{x_ix_{i,-1}}^2:=\lim_{t\to\infty}E(x_{i,t}-\alpha_i)(x_{i,t-1}-\alpha_i)$$
+exist and are finite. Hence according to Section 6.2.1 of Chapter 6
+in Evans and Honkapohja (2001, p.126), the associated ODE is
+\begin{equation}\label{modelsac}
+    \left\{
+    \begin{split}
+           \frac{d\pmb\alpha}{d\tau}&=\overline{\pmb{x}}(\pmb\alpha,\pmb\beta)-\pmb\alpha, \\
+\frac{d\pmb\beta}{d\tau}&={\pmb R}^{-1}[{\pmb E}-\pmb{\beta \Omega}]={\pmb R}^{-1}{\pmb \Omega}[{\pmb E}{\pmb \Omega}^{-1}-\pmb{\beta}],\\
+\frac{d {\pmb R}}{d\tau}&={\pmb \Omega}-{\pmb R},
+    \end{split}
+    \right.
+    \end{equation}
+    where $\pmb R$ is a diagonal matrix with the $i$-th diagonal entry $R_i$ and $\pmb \Omega$, $\pmb E$ are also diagonal matrices as defined in Section 2.  As shown in Evans and Honkapohja (2001), a BLE corresponds to a fixed point of the following ODE
+(\ref{modelsac2}).
+\begin{equation}\label{modelsac2}
+    \left\{
+    \begin{split}
+           \frac{d\pmb\alpha}{d\tau}&=\overline{\pmb{x}}(\pmb\alpha,\pmb\beta)-\pmb\alpha, \\
+\frac{d\pmb\beta}{d\tau}&={\pmb G}-\pmb{\beta}.
+    \end{split}
+    \right.
+    \end{equation}
+    
+    Note that $\pmb\beta$ and $\pmb G$ are both diagonal matrices. The Jacobian matrix of \ref{modelsac2} is, in fact, equivalent to
+$$\left(\begin{array}{cc}
+({\pmb I}-{\pmb b_1}{{\pmb \beta}^*}^2)^{-1}({\pmb b}_1-{\pmb I})& \pmb\varrho\\
+ \pmb 0&{\pmb D}{\pmb G}_{\pmb\beta}(\pmb\beta^*)-\pmb I
+ \end{array}\right),$$
+ where ${\pmb D}{\pmb G}_{\pmb\beta}$ is a Jacobian matrix with the $(i,j)$-th entry $\frac{\partial G_i}{\partial\beta_j}$ and the form of matrix $\pmb\varrho$ is omitted since it is not needed in the proof. Therefore, if all the eigenvalues of $({\pmb I}-{\pmb b_1}{{\pmb \beta}^*}^2)^{-1}({\pmb b}_1-{\pmb I})$ have negative real parts, and all the eigenvalues of ${\pmb D}{\pmb G}_{\pmb\beta}(\pmb\beta^*)$ have real parts less than 1, the SAC-learning
+$({\pmb\alpha}_t,{\pmb\beta}_t)$ converges to the BLE $({\pmb\alpha}^*, {\pmb\beta}^*)$ as time $t$ tends to $\infty$.
+\begin{comment}
+\subsection*{Stability with Lagged State Variables}
+When lagged state variables are included in the law of motion as in (\ref{eqn:2_7}), a BLE corresponds to the fixed point of the ODE: \\
+\begin{cases}
+\frac{d\alpha}{d\tau}=\bar{S}(\alpha,\beta)-\alpha\\
+\frac{d\beta}{d\tau}=G-\beta
+\end{cases}
+\noindent
+And the eigenvalues of its Jacobian are now given by the solution of:
+$$ ( I - \gamma_1 - \gamma_2 \boldsymbol \beta^{*}^2)^{-1}(\gamma_1+\gamma_2 -I)(DG_{\boldsymbol \beta}(\boldsymbol \beta^{*})-I)=0 $$
+\noindent
+Therefore, if all eigenvalues of $( I - \gamma_1 - \gamma_2 \boldsymbol \beta^{*}^2)^{-1}(\gamma_1+\gamma_2 -I)$ have negative real parts, and all eigenvalues of $(DG_{\boldsymbol \beta}(\boldsymbol \beta^{*})-I)$ have real parts less than one, then the BLE $(\boldsymbol \alpha^{*}, \boldsymbol \beta^{*})$ is locally stable. 
+
+
+\end{comment}
+
+
+
+
+\section{Local Stability Conditions} \label{app_iterative_stab}
+
+
+%\textbf{Proof of Proposition 3:} 
+% The first part of the Proposition follows from Definition (2.1). The first consistency requirement is satisfied since $\pmb{ \alpha}^{*}=\pmb{0}$ by assumption, and the second consistency requirement is  satisfied since we have $ G(\pmb{\beta}^{K}) \approx \pmb{\beta}^{K} $ after convergence, which implies  $  \pmb{\beta}^{K} \approx \pmb{\beta}^{*}.$
+%Define the spectral radius of a matrix $A$ as $\rho(A)=\underset{i}{\operatorname{max}} |\lambda_i (A)| $, where $\lambda_i$ denotes an eigenvalue of $A$, and let $(\pmb{0},  \pmb{\beta}^{*}) $
+%be an iteratively E-stable fixed-point. In order to prove the local stability of $G(\pmb{\beta}^{*})$ under (\ref{eqn:2_15}), we show that $G(\pmb{\beta})$ is locally contracting on an open interval around $\pmb{\beta^{*}}$ and apply Banach Fixed-Point theorem. 
+
+%Under the assumption that $\rho(DG_{\pmb{\beta}}(\pmb{\beta}^{*}))<1$,  using Lemma 5.6.10 of Horn \& Johnson (1985), one can show that there exists a matrix norm $||.|| \in \mathbb{R}^n$ with  
+%\begin{equation}
+%\rho(DG_{\pmb{\beta}}(\pmb{\beta^{*}})) \leq || DG_{\pmb{\beta}}(\pmb{\beta^{*}})|| \leq \rho(DG_{\pmb{\beta}}(\pmb{\beta^{*}})) + \epsilon,
+%\end{equation}
+
+%\noindent
+%for some $\epsilon \in {\mathbb{R}}^{+}$. Defining $\epsilon < 1-\rho(DG_{\pmb{\beta}}(\pmb{ \beta^{*}}))$, it follows that  $ || DG_{\pmb{\beta}}(\pmb{\beta^{*}}) || < 1 $. Let $\hat{D} \subset \mathbb{R}^N$ be a small open convex interval around $\pmb{\beta^{*}}$, such that  $\forall \pmb{\hat{\beta}} \in \hat{D}, \rho(DG_{\pmb{\beta}}(\pmb{\hat{\beta}}))<1$ and $G(\pmb{\beta}): \hat{D} \rightarrow \hat{D} $ has continuous partial derivatives. Letting $\pmb{\beta_1}, \pmb{\beta_2} \in \hat{D} $, it follows that
+%\begin{equation}
+%\begin{split}
+%||G(\pmb{\beta_2})-G(\pmb{\beta_1})||
+%\leq
+%\int_0^1 ||DG_{\pmb{\beta}}(\pmb{\beta_1}+
+%t(\pmb{\beta_2}-\pmb{\beta_1}))(\pmb{\beta_2}-\pmb{\beta_1})dt||
+%\leq \\
+%\int_0^1 ||DG_{\pmb{\beta}}(\pmb{\beta_1}+
+%t(\pmb{\beta_2}-\pmb{\beta_1}))||\hspace{2 mm} ||(\pmb{\beta_2}-\pmb{\beta_1})||dt
+%\leq
+%q ||\pmb{\beta_2} -\pmb{\beta_1}||,
+%\end{split}
+%\end{equation}
+
+%\noindent
+%for any $q \in \mathbb{R^{+}}$ with $ ||DG_{\pmb{\beta}}(\pmb{\beta^{*}})||\leq q < 1 $. Then by definition, $G(\pmb{\beta})$ is a contraction mapping on $\hat{D}$ with a Lipschitz constant $||DG_{\pmb{\beta}}(\pmb{\beta^{*}})||$. Applying Banach fixed-point theorem yields: 
+%\begin{equation}
+%lim_{k \rightarrow \infty} G^k(\pmb{\beta^{(0)}}) = \pmb{ \beta^{*}}, \forall \pmb{\beta^{(0)}} \in \hat{D}.
+%\end{equation}
+
+%\vspace{3 mm}
+
+First we show that the condition $\rho(DG_{\pmb{\beta}}(\pmb{\beta}^{*}))<1$ is not necessary for local stability of the Quasi-Newton iteration in (\ref{eqn:2_16}). Note that the iteration is given as: 
+
+\begin{equation}
+\label{quasi_iter}
+\pmb{\beta^{(k+1)}} = \pmb{\beta^{(k)}} - DF_{\pmb{\beta}}(\pmb{\beta^{(k)}},\theta)^{-1}F(\pmb{\beta^{(k)}},\theta),
+\end{equation}
+with $F(\pmb{\beta^{(k)}},\theta) = G(\pmb{\beta^{(k)}},\theta)-\pmb{\beta^{(k)}}$. Defining\footnote{For the remainder, we omit the dependence of $G(\beta,\theta)$ on the structural parameters $\theta$ for ease of notation.} $H(\pmb{\beta})= \pmb{\beta}-DF_{\pmb{\beta}}(\pmb{\beta})^{-1}F(\pmb{\beta})$, we need to show that $H(\pmb{\beta})$ is locally stable. Note that:
+$$DH_{\pmb{\beta}}(\pmb{\beta})=DF_{\pmb{\beta}}(\pmb{\beta})^{-2}D^2_{\pmb{\beta}}F(\pmb{\beta}) F(\pmb{\beta}),$$
+with $DF_{\pmb{\beta}}(\pmb{\beta})=DG_{\pmb{\beta}}(\pmb{\beta})-I$ and $D^2_{\pmb{\beta}}F(\pmb{\beta})=D^2_{\pmb{\beta}}G(\pmb{\beta})$, which implies:
+$$DH_{\pmb{\beta}}(\pmb{\beta})= (D_{\pmb{\beta}}G({\pmb{\beta}})-I)^{-2}D^2_{\pmb{\beta}}G(\pmb{\beta})(G(\pmb{\beta})- {\pmb{\beta}}).$$
+Since ${\pmb{\beta}^{*}}=G({\pmb{\beta}}^{*})$ at a BLE by definition, it follows that $\rho(DH_{\pmb{\beta}}({\pmb{\beta^{*}}}))<1$. Hence (\ref{quasi_iter}) is locally stable at any BLE ${\pmb{\beta}^{*}}$ and one can find a neighbourhood $\hat{D}$ around ${\pmb{\beta}^{*}}$ such that:
+\begin{equation}
+lim_{k \rightarrow \infty} H^k(\pmb{\beta^{(0)}}) = \pmb{ \beta^{*}}, \forall \pmb{\beta^{(0)}} \in \hat{D}.
+\end{equation}
+ Importantly, this result holds for all E-stable and E-unstable BLE. Therefore the Quasi-Newton iteration may also converge E-unstable fixed-points.
+
+%Letting $\hat{D}$ be an open convex set around $\pmb{\beta^{*}}$, and $ \pmb{\beta_1},\pmb{\beta_2}$ two points therein as before, it follows that
+%$$||H(\pmb{\beta_2})-H(\pmb{\beta_1})||
+%\leq
+%\int_0^1 ||DH_{\pmb{\beta}}(\pmb{\beta_1}+
+%t(\pmb{\beta_2}-\pmb{\beta_1}))(\pmb{\beta_2}-\pmb{\beta_1})dt||
+%\leq
+%$$
+%$$
+%\int_0^1 ||DH_{\pmb{\beta}}(\pmb{\beta_1}+
+%t(\pmb{\beta_2}-\pmb{\beta_1}))||\hspace{2 mm} ||(\pmb{\beta_2}-\pmb{\beta_1})||dt
+%\leq
+%q ||\pmb{\beta_2} -\pmb{\beta_1}||, 
+%$$
+%for some $q \in \mathbb{R^{+}}$ with $ ||DH_{\pmb{\beta}}(\pmb{\beta^{*}})||\leq q < 1 $. Note that $DH_{\pmb{\beta}}(\pmb{\beta}) \rightarrow 0 $ as $\pmb{\beta} \rightarrow \pmb{\beta^{*}}$. Then by definition, $H(\pmb{\beta})$ is a contraction mapping on $D$ with a Lipschitz constant $q\rightarrow 0$. Importantly, this result holds for \textit{all} E-stable and E-unstable fixed-points satisfying $G(\pmb{\beta^{*}})=\pmb{\beta^{*}}$, hence the Quasi-Newton iteration may also converge to E-unstable fixed-points, i.e. 
+%\begin{equation}
+%lim_{k \rightarrow \infty} H^k(\pmb{\beta^{(0)}}) = \pmb{ \beta^{*}}, \forall \pmb{\beta^{(0)}} \in \hat{D}.
+%\end{equation}
+
+
+%\noindent
+%\textbf{Proof of Proposition 4}: 
+%The first part of the proposition  follows again from Definition (2.1). The first consistency requirement is satisfied by construction because the mean coefficients are assumed to be zero, and the second consistency requirement is satisfied as long as $\theta^{(k)} \approx \theta^{(k-1)}$, in which case we have $G(\pmb{\beta^{(k-1)}},\theta^{(k-1)})= \pmb{\beta^{(k)}} \approx \pmb{\beta^{(k-1)}}$. 
+
+Next we show that the local stability argument extends to this case after re-writing the maximization problem. Let $(\pmb{0},\pmb{\beta^{*}})$ be an iteratively E-stable fixed-point at the estimated parameter values $\hat{\theta}^{*}$. Then the belief parameters $\pmb{\beta^{*}}$ and the structural parameters $\hat{\theta}^{*}$ satisfy the conditions: 
+\begin{equation}
+\begin{cases}
+\pmb{\beta^{*}}=G(\pmb{\beta^{*}},\theta^{*}) \\
+\theta^{*}=\underset{\theta}{\operatorname{argmax}} \hspace{2 mm} p(\theta | Y_{1:T},\pmb{\beta^{*}}).
+\end{cases}
+\end{equation}
+
+\noindent
+Since the dataset $Y_{1:T}$ remains fixed at each step of the iteration, the second condition can be written as:
+\begin{equation}
+\theta^{*}=\underset{\theta}{\operatorname{argmax}} \hspace{2 mm} p(\theta | Y_{1:T},\pmb{\beta^{*}})= p_m(\pmb{\beta^{*}}),
+\end{equation}
+\noindent
+for some $p_m(.)$. This implies that the estimated structural parameters $\theta^{*}$ are given as a function the equilibrium belief parameters $\pmb{\beta^{*}}$ \textit{for a given dataset and likelihood function}. Plugging this back into the first condition yields:
+\begin{equation}
+\pmb{\beta^{*}}=G(\pmb{\beta^{*}},p_m(\pmb{\beta^{*}}) ).
+\label{eqn:fp_est}
+\end{equation}
+\noindent
+(\ref{eqn:fp_est}) has the same functional form as the fixed-point iteration in (\ref{eqn:2_15}). In this case the Jacobian matrix at the equilibrium $\pmb{\beta^{*}}$ and $\theta^{*}$ is given by
+\begin{equation}
+{DG}_{\pmb{\beta}}{(\pmb{\beta^{*}})}= \frac{\partial G}{\partial \pmb{\beta}}_{|{\pmb{\beta^{*}}, \theta^{*}} }+ \frac{\partial G}{\partial \theta^{*}} \frac{\partial \theta^{*}}{\partial \pmb{\beta}}_{| \pmb{\beta^{*}},\theta^{*}}.
+\label{eqn:partial_der}
+\end{equation}
+\noindent
+Note that the first component in (\ref{eqn:partial_der}) corresponds to the Jacobian matrix of $G(\pmb{\beta})$ in the case with fixed parameters, while the second component appears due to the fact that the structural parameters also depend on $\pmb{\beta^{*}}$. Further note that, all three partial derivatives that appear in (\ref{eqn:partial_der}) can be numerically evaluated. If the eigenvalue condition $\rho(D{G}(\pmb{\beta^{*}}))<1$ is satisfied, it follows that   $\pmb{\beta^{*}}=G(\pmb{\beta^{*}},\theta^{*})$ is locally stable under (\ref{eqn:theta_argmax}) and (\ref{eqn:beta_argmax}). 
+
+
+
+\section{Eigenvalues of matrix ${\pmb B}{\pmb\beta}^2$} \label{apdix_deter}
+The characteristic polynomial of $\bf B\pmb\beta^2$ is given by
+$h(\nu)=\nu^2+c_1\nu+c_2,$
+where
+$$c_1=-\frac{\beta_1^2+[\gamma\varphi+\lambda(1+\varphi\phi_y)]\beta_2^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y},\quad c_2=\frac{\lambda\beta_1^2\beta_2^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}.$$
+Both of the eigenvalues of $\bf B\pmb\beta^2$ are inside the unit circle if
+and only if both of the following conditions hold (see Elaydi,
+1999):
+$$h(1)>0,\quad h(-1)>0, \quad|h(0)|<1.$$
+It is easy to see $h(-1)>0, |h(0)|<1$ for any $\beta_i\in[-1,1]$. Note that
+\begin{eqnarray*}
+h(1)&=&\frac{(1-\beta_1^2)(1-\lambda\beta_2^2)+\gamma\varphi\phi_\pi+\varphi\phi_y-(\gamma\varphi+\lambda\varphi\phi_y)\beta_2^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y},\\
+&\geq&\frac{\varphi[\gamma(\phi_\pi-1)+(1-\lambda)\phi_y]}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}.
+\end{eqnarray*}
+Thus if $\gamma(\phi_\pi-1)+(1-\lambda)\phi_y>0$, then $h(1)>0$. Therefore, both eigenvalues of $\bf B\pmb\beta^2$ lie inside the unit
+circle.
+
+
+\section{First-order autocorrelation coefficients of output gap and inflation} \label{acfnkc}
+Now we calculate $\pmb G(\pmb\alpha,\pmb\beta)$. Define ${\pmb
+z}_t={\pmb x}_t-\bf \bar{x}$. Then in order to obtain $\pmb
+G(\pmb\alpha,\pmb\beta)$, we first calculate $\pmb E(z_tz_{t-1}')$
+and $\pmb E(z_{t}z_{t}')$. Rewrite model (\ref{nkmodelb}) into its $\mbox{VARMA}(1,\infty)$ representation
+ \begin{equation}\label{modeln30}
+   {\pmb z}_{t}=\pmb{B\beta}^2{\bf z}_{t-1}+{\pmb C}\sum_{n=0}^\infty\rho^n{\pmb\varepsilon}_{t-n}.
+\end{equation}
+Since both eigenvalues of $\pmb{ B\beta}^2$ lie inside the unit circle under the assumption $\gamma(\phi_\pi-1)+(1-\lambda)\phi_y>0$ (see Appendix \ref{apdix_deter}), then
+\begin{eqnarray*}\label{modeln3}
+    {\pmb z}_{t}={\bf C}[\rho
+         {\bf I}-{\bf C}^{-1}\pmb {B\beta}^2{\bf C}]^{-1}\sum_{n=0}^\infty[\rho^{n+1}
+        {\bf I}-{\bf C}^{-1}(\pmb {B\beta}^2)^{n+1}{\bf C}]{\pmb \varepsilon}_{t-n}.
+\end{eqnarray*}
+Note $\rho$ is a scalar number and $\pmb I$ is a $2\times 2$ identity
+matrix. Based on i.i.d. assumption of ${\pmb\varepsilon}_{t}$,
+\begin{eqnarray}
+  {\pmb Ez}_{t}{\pmb z}_t' &=&{\bf C}[\rho
+         {\bf I}-{\bf C}^{-1}\pmb {B\beta}^2{\bf C}]^{-1}\sum_{n=0}^\infty[\rho^{n+1}
+        {\bf I}-{\bf C}^{-1}(\pmb {B\beta}^2)^{n+1}{\bf C}]{\pmb\Sigma}[\rho^{n+1}{\bf I}-({\bf C}^{-1}(\pmb {B\beta}^2)^{n+1}{\bf C})']\cdot\nonumber\\
+         &&[\rho
+         {\bf I}-({\bf C}^{-1}\pmb {B\beta}^2{\bf C})']^{-1} {\bf C}',\label{varzm}
+\end{eqnarray}
+where ${\pmb\Sigma}=\left[\begin{array}{cc}
+\sigma_1^2&0\\
+0&\sigma_2^2
+\end{array}\right].$
+
+In the following we try to obtain the expression of the matrix ${\pmb
+Ez}_{t}{\pmb z}_t'$ and hence we first calculate the matrix
+$\sum_{n=0}^\infty[\rho^{n+1}
+        {\bf I}-{\bf C}^{-1}(\pmb {B\beta}^2)^{n+1}{\bf C}]{\pmb\Sigma}[\rho^{n+1}{\bf I}-({\bf C}^{-1}(\pmb {B\beta}^2)^{n+1}{\bf C})']$ and ${\bf C}^{-1}(\pmb {B\beta}^2)^{n+1}{\bf C}$.
+
+Note that
+$$\pmb{B\beta}^2=\frac{1}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}\left[\begin{array}{cc}
+\beta_1^2&\varphi(1-\lambda\phi_\pi)\beta_2^2\\
+\gamma\beta_1^2&(\gamma\varphi+\lambda(1+\varphi\phi_y))\beta_2^2
+\end{array}\right].$$
+$\pmb{B\beta}^2$ has two eigenvalues\footnote{In the special case
+$\lambda_1=\lambda_2$, although $\pmb{B\beta}^2$ is not diagonalizable,
+the expressions of first-order autocorrelations (\ref{acynk}) and
+(\ref{acpink}) still hold based on the Jordan normal form of matrix
+$\pmb{B\beta}^2$. Without loss of generality, in the following we
+assume $\lambda_1\neq\lambda_2$.}
+\begin{eqnarray*}
+\lambda_1&=&\frac{[\beta_1^2+(\gamma\varphi+\lambda+\lambda\varphi\phi_y)\beta_2^2]+\sqrt{[\beta_1^2+(\gamma\varphi+\lambda+\lambda\varphi\phi_y)\beta_2^2]^2-4\lambda\beta_1^2\beta_2^2(1+\gamma\varphi\phi_\pi+\varphi\phi_y)}}{2(1+\gamma\varphi\phi_\pi+\varphi\phi_y)},\\
+\lambda_2&=&\frac{[\beta_1^2+(\gamma\varphi+\lambda+\lambda\varphi\phi_y)\beta_2^2]-\sqrt{[\beta_1^2+(\gamma\varphi+\lambda+\lambda\varphi\phi_y)\beta_2^2]^2-4\lambda\beta_1^2\beta_2^2(1+\gamma\varphi\phi_\pi+\varphi\phi_y)}}{2(1+\gamma\varphi\phi_\pi+\varphi\phi_y)}.
+\end{eqnarray*}
+Their corresponding eigenvectors are
+\begin{eqnarray*}
+P_1&=&\Big[\frac{\varphi(1-\lambda\phi_\pi)\beta_2^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y},\,\,
+\lambda_1-\frac{\beta_1^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}\Big]', \\
+P_2&=&\Big[\frac{\varphi(1-\lambda\phi_\pi)\beta_2^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y},\,\,
+\lambda_2-\frac{\beta_1^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}\Big]'.
+\end{eqnarray*}
+Let ${\pmb P}=[P_1, P_2]$. Then
+%\begin{eqnarray*}
+%\pmb{B\beta^2}={\pmb P}\left[\begin{array}{cc}
+%\lambda_1&0\\
+%0&\lambda_2
+%\end{array}\right]{\pmb P}^{-1}.
+%\end{eqnarray*}
+\begin{eqnarray*}
+\pmb{C^{-1}B\beta^2C}=\pmb{C^{-1}P}\left[\begin{array}{cc}
+\lambda_1&0\\
+0&\lambda_2
+\end{array}\right]{\pmb(C}^{-1}{\pmb
+P})^{-1},
+\end{eqnarray*}
+where
+\begin{eqnarray*}
+&&\pmb{C^{-1}P}\\
+&=&\left[\begin{array}{cc}
+\frac{(1+\varphi\phi_y)\varphi(1-\lambda\phi_\pi)\beta_2^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}+\varphi\phi_\pi\Big(\lambda_1-\frac{\beta_1^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}\Big)&\frac{(1+\varphi\phi_y)\varphi(1-\lambda\phi_\pi)\beta_2^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}+\varphi\phi_\pi\Big(\lambda_2-\frac{\beta_1^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}\Big)\\
+\frac{-\gamma\varphi(1-\lambda\phi_\pi)\beta_2^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}+\Big(\lambda_1-\frac{\beta_1^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}\Big)&\frac{-\gamma\varphi(1-\lambda\phi_\pi)\beta_2^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}+\Big(\lambda_2-\frac{\beta_1^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}\Big)
+\end{array}\right]\\
+&=:&\left[\begin{array}{cc} d_1&d_2\\
+d_3&d_4
+\end{array}\right].
+\end{eqnarray*}
+Correspondingly
+\begin{eqnarray*} {\pmb(C}^{-1}{\pmb
+P})^{-1}=\frac{1}{d_1d_4-d_2d_3}\left[\begin{array}{cc}
+d_4&-d_2\\
+-d_3&d_1
+\end{array}\right],
+\end{eqnarray*}
+where
+$$d_1d_4-d_2d_3=\det({\pmb C^{-1}P})=\varphi(1-\lambda\phi_\pi)\beta_2^2(\lambda_2-\lambda_1).$$
+Hence
+\begin{eqnarray*}
+\pmb{C^{-1}(B\beta^2)^{n+1}C}&=&\pmb{C^{-1}P}\left[\begin{array}{cc}
+\lambda_1^{n+1}&0\\
+0&\lambda_2^{n+1}
+\end{array}\right]\pmb{(C^{-1}P)^{-1}}\\
+&=&\frac{1}{d_1d_4-d_2d_3}\left[\begin{array}{cc}
+d_1d_4\lambda_1^{n+1}-d_2d_3\lambda_2^{n+1}&d_1d_2(\lambda_2^{n+1}-\lambda_1^{n+1})\\
+d_3d_4(\lambda_1^{n+1}-\lambda_2^{n+1})&d_1d_4\lambda_2^{n+1}-d_2d_3\lambda_1^{n+1}
+\end{array}\right].
+\end{eqnarray*}
+Thus
+\begin{eqnarray*}
+&&\pmb{\rho^{n+1}I-C^{-1}(B\beta^2)^{n+1}C}=
+\\
+&&\frac{1}{d_1d_4-d_2d_3}\left[\begin{array}{cc}
+d_1d_4(\rho^{n+1}-\lambda_1^{n+1})-d_2d_3(\rho^{n+1}-\lambda_2^{n+1})&-d_1d_2(\lambda_2^{n+1}-\lambda_1^{n+1})\\
+-d_3d_4(\lambda_1^{n+1}-\lambda_2^{n+1})&d_1d_4(\rho^{n+1}-\lambda_2^{n+1})-d_2d_3(\rho^{n+1}-\lambda_1^{n+1})
+\end{array}\right].
+\end{eqnarray*}
+Therefore
+\begin{eqnarray*}
+\pmb{[\rho^{n+1}I-C^{-1}(B\beta^2)^{n+1}C]\Sigma[\rho^{n+1}I-(C^{-1}(B\beta^2)^{n+1}C)']}
+=\frac{1}{(d_1d_4-d_2d_3)^2}\left[\begin{array}{cc}
+s_1(n+1)&s_2(n+1)\\
+s_2(n+1)&s_3(n+1)
+\end{array}\right],
+\end{eqnarray*}
+where
+\begin{eqnarray*}
+s_1(n+1)&=&\sigma_1^2[d_1d_4(\rho^{n+1}-\lambda_1^{n+1})-d_2d_3(\rho^{n+1}-\lambda_2^{n+1})]^2+\sigma_2^2[d_1d_2(\lambda_2^{n+1}-\lambda_1^{n+1})]^2,\\
+s_2(n+1)&=&\sigma_1^2d_3d_4(\lambda_2^{n+1}-\lambda_1^{n+1})[d_1d_4(\rho^{n+1}-\lambda_1^{n+1})-d_2d_3(\rho^{n+1}-\lambda_2^{n+1})]+\\
+&&\sigma_2^2d_1d_2(\lambda_1^{n+1}-\lambda_2^{n+1})[d_1d_4(\rho^{n+1}-\lambda_2^{n+1})-d_2d_3(\rho^{n+1}-\lambda_1^{n+1})],\\
+s_3(n+1)&=&\sigma_1^2[d_3d_4(\lambda_2^{n+1}-\lambda_1^{n+1})]^2+\sigma_2^2[d_1d_4(\rho^{n+1}-\lambda_2^{n+1})-d_2d_3(\rho^{n+1}-\lambda_1^{n+1})]^2.
+\end{eqnarray*}
+Correspondingly it is natural to have
+\begin{eqnarray}
+&&\pmb{\sum_{n=0}^\infty{[\rho^{n+1}I-C^{-1}(B\beta^2)^{n+1}C]\Sigma[\rho^{n+1}I-(C^{-1}(B\beta^2)^{n+1}C)']}}\nonumber\\
+&=&\frac{1}{(d_1d_4-d_2d_3)^2}\left[\begin{array}{cc}
+\sum_{n=0}^\infty s_1(n+1)&\sum_{n=0}^\infty s_2(n+1)\\
+\sum_{n=0}^\infty s_2(n+1)&\sum_{n=0}^\infty s_3(n+1)
+\end{array}\right]\nonumber\\
+&=&\frac{1}{(d_1d_4-d_2d_3)^2}\left[\begin{array}{cc}
+s_1^*&s_2^*\\
+s_2^*&s_3^*
+\end{array}\right],\label{varzps}
+\end{eqnarray}
+
+where
+\begin{eqnarray}
+s_1^*&=&\sigma_1^2\Big[(d_1d_4-d_2d_3)^2\frac{1}{1-\rho^2}-2d_1d_4(d_1d_4-d_2d_3)\frac{1}{1-\rho\lambda_1}+(d_1d_4)^2\frac{1}{1-\lambda_1^2}\nonumber\\
+                          &&+2d_2d_3(d_1d_4-d_2d_3)\frac{1}{1-\rho\lambda_2}-2d_1d_2d_3d_4\frac{1}{1-\lambda_1\lambda_2}+(d_2d_3)^2\frac{1}{1-\lambda_2^2}\Big]\nonumber\\
+                          &&+\sigma_2^2\Big[(d_1d_2)^2
+\big(\frac{1}{1-\lambda_2^2}-\frac{2}{1-\lambda_1\lambda_2}+\frac{1}{1-\lambda_1^2}\big)\Big], \label{s1star}\\
+s_2^*&=&\sigma_1^2\Big[d_3d_4\Big\{(d_1d_4-d_2d_3)\Big(\frac{1}{1-\rho\lambda_2}-\frac{1}{1-\rho\lambda_1}\Big)+\frac{d_1d_4}{1-\lambda_1^2}-\frac{d_1d_4+d_2d_3}{1-\lambda_1\lambda_2}+\frac{d_2d_3}{1-\lambda_2^2}\Big\}\Big]+\sigma_2^2\cdot\nonumber\\
+&&\Big[d_1d_2\Big\{(d_1d_4-d_2d_3)\Big(\frac{1}{1-\rho\lambda_1}-\frac{1}{1-\rho\lambda_2}\Big)+\frac{d_1d_4}{1-\lambda_2^2}-\frac{d_1d_4+d_2d_3}{1-\lambda_1\lambda_2}+\frac{d_2d_3}{1-\lambda_1^2}\Big\}\Big],\label{s2star}\\
+s_3^*&=&\sigma_1^2\Big[(d_3d_4)^2\big(\frac{1}{1-\lambda_2^2}-\frac{2}{1-\lambda_1\lambda_2}+\frac{1}{1-\lambda_1^2}\big)\Big]\nonumber\\
+&&+\sigma_2^2\Big[(d_1d_4-d_2d_3)^2\frac{1}{1-\rho^2}-2d_1d_4(d_1d_4-d_2d_3)\frac{1}{1-\rho\lambda_2}+(d_1d_4)^2\frac{1}{1-\lambda_2^2}\nonumber\\
+                          &&+2d_2d_3(d_1d_4-d_2d_3)\frac{1}{1-\rho\lambda_1}-2d_1d_2d_3d_4\frac{1}{1-\lambda_1\lambda_2}+(d_2d_3)^2\frac{1}{1-\lambda_1^2}\Big].\label{s3star}
+\end{eqnarray}
+
+Therefore based on (\ref{varzm}) and (\ref{varzps}), we can further obtain the expression of ${\pmb
+Ez}_{t}{\pmb z}_{t}'$.    
+
+Note that
+\begin{eqnarray*}
+\pmb{[\rho
+I-C^{-1}(B\beta^2)C]^{-1}}=\frac{1}{\widetilde{m}}\left[\begin{array}{cc}
+d_1d_4(\rho-\lambda_2)-d_2d_3(\rho-\lambda_1)&d_1d_2(\lambda_2-\lambda_1)\\
+d_3d_4(\lambda_1-\lambda_2)&d_1d_4(\rho-\lambda_1)-d_2d_3(\rho-\lambda_2)
+\end{array}\right],
+\end{eqnarray*}
+where
+$\widetilde{m}=(d_1d_4-d_2d_3)(\rho-\lambda_1)(\rho-\lambda_2)$,
+and
+\begin{eqnarray*}
+\pmb{C[\rho I-C^{-1}(B\beta^2)C]^{-1}}
+=\frac{1}{\widetilde{m}(1+\gamma\varphi\phi_\pi+\varphi\phi_y)}\left[\begin{array}{cc}
+k_1&k_2\\
+k_3&k_4
+\end{array}\right],
+\end{eqnarray*}
+
+where
+\begin{eqnarray}
+k_1&=&d_1d_4(\rho-\lambda_2)-d_2d_3(\rho-\lambda_1)-\varphi\phi_\pi
+d_3d_4(\lambda_1-\lambda_2),\label{k1}\\
+k_2&=&d_1d_2(\lambda_2-\lambda_1)-\varphi\phi_\pi[d_1d_4(\rho-\lambda_1)-d_2d_3(\rho-\lambda_2)],\label{k2}\\
+k_3&=&\gamma[d_1d_4(\rho-\lambda_2)-d_2d_3(\rho-\lambda_1)]+(1+\varphi\phi_y)d_3d_4(\lambda_1-\lambda_2),\label{k3}\\
+k_4&=&\gamma
+d_1d_2(\lambda_2-\lambda_1)+(1+\varphi\phi_y)[d_1d_4(\rho-\lambda_1)-d_2d_3(\rho-\lambda_2)].\label{k4}
+\end{eqnarray}
+Thus we have
+\begin{eqnarray}\label{varzexp1}
+   &&  {\pmb E z}_{t}{\pmb z}_t'=\widetilde{k}\cdot\nonumber\\
+       &&\left[\begin{array}{cc}
+k_1^2s_1^*+2k_1k_2s_2^*+k_2^2s_3^*&k_1k_3s_1^*+(k_1k_4+k_2k_3)s_2^*+k_2k_4s_3^*\\
+k_1k_3s_1^*+(k_1k_4+k_2k_3)s_2^*+k_2k_4s_3^*&k_3^2s_1^*+2k_3k_4s_2^*+k_4^2s_3^*
+\end{array}\right]
+\end{eqnarray}
+
+where
+$\widetilde{k}=\frac{1}{(1+\gamma\varphi\phi_\pi+\varphi\phi_y)^2(d_1d_4-d_2d_3)^4(\rho-\lambda_1)^2(\rho-\lambda_2)^2}$,
+$s_i^*$ is given in (\ref{s1star})-(\ref{s3star}) and $k_i$ is given
+in (\ref{k1})-(\ref{k4}).
+
+Through very technical and extremely complicated calculations\footnote{Because of limit of pages, we first drop the calculations here. In case the readers need the details, we can provide separately.}, the variances of output gap and inflations can be further simplified as
+  \begin{eqnarray}
+&&E(y_t^2)=\frac{1}{\widetilde{k}}( k_1^2s_1^*+2k_1k_2s_2^*+k_2^2s_3^*)\nonumber\\
+&=&\frac{1}{(1+\gamma\varphi\phi_\pi+\varphi\phi_y)^2(1-\rho^2)(1-\rho\lambda_1)(1-\lambda_1^2)(1-\rho\lambda_2)(1-\lambda_2^2)(1-\lambda_1\lambda_2)}\nonumber\\
+&&\Big\{\sigma_1^2\Big[[(1+\lambda^2\beta_2^4)-2\lambda\beta_2^2(\rho+\lambda_1+\lambda_2)+(1+\lambda^2\beta_2^4)(\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2)]\nonumber\\
+&&-\rho\lambda_1\lambda_2[(1+\lambda^2\beta_2^4)(\rho+\lambda_1+\lambda_2)-2\lambda\beta_2^2(\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2)+(1+\lambda^2\beta_2^4)\rho\lambda_1\lambda_2]\Big]\nonumber\\
+&&+\sigma_2^2\Big[[((\varphi\phi_\pi)^2+\varphi^2\beta_2^4)-2\varphi\phi_\pi\varphi\beta_2^2(\rho+\lambda_1+\lambda_2)+((\varphi\phi_\pi)^2+\varphi^2\beta_2^4)(\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2)]\nonumber\\
+&&-\rho\lambda_1\lambda_2[((\varphi\phi_\pi)^2+\varphi^2\beta_2^4)(\rho+\lambda_1+\lambda_2)-2\varphi\phi_\pi\varphi\beta_2^2(\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2)\nonumber\\
+&&+((\varphi\phi_\pi)^2+\varphi^2\beta_2^4)\rho\lambda_1\lambda_2]\Big]\Big\},\label{varyapp}\\
+&&E(\pi_t^2)=\frac{1}{\widetilde{k}}( k_3^2s_1^*+2k_3k_4s_2^*+k_4^2s_3^*)\nonumber\\
+&=&\frac{1}{(1+\gamma\varphi\phi_\pi+\varphi\phi_y)^2(1-\rho^2)(1-\rho\lambda_1)(1-\lambda_1^2)(1-\rho\lambda_2)(1-\lambda_2^2)(1-\lambda_1\lambda_2)}\nonumber\\
+&&\Big\{\sigma_1^2\Big[\gamma^2[1+\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2-\rho\lambda_1\lambda_2(\rho+\lambda_1+\lambda_2)-(\rho\lambda_1\lambda_2)^2]\Big]\nonumber\\
+&&+\sigma_2^2\Big[[((1+\varphi\phi_y)^2+\beta_1^4)-2(1+\varphi\phi_y)\beta_1^2(\rho+\lambda_1+\lambda_2)+((1+\varphi\phi_y)^2+\beta_1^4)\nonumber\\
+&&(\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2)]-\rho\lambda_1\lambda_2[((1+\varphi\phi_y)^2+\beta_1^4)(\rho+\lambda_1+\lambda_2)-2(1+\varphi\phi_y)\beta_1^2\cdot\nonumber\\
+&&(\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2)+((1+\varphi\phi_y)^2+\beta_1^4)\rho\lambda_1\lambda_2]\Big]\Big\}.\label{varpiapp}
+\end{eqnarray}
+Note that here $E(y_t^2)$ and $E(\pi_t^2)$ in fact depend on the trace $\lambda_1+\lambda_2$ and determinant $\lambda_1\lambda_2$.
+
+
+With the expression of covariance matrix ${\pmb E z}_{t}{\pmb z}_t'$,
+in order to obtain the expressions of first-order autocorrelation
+coefficient of output gap and inflation, we need to further calculate
+the first-order autocovariance ${\pmb Ez}_{t}{\pmb z}_{t-1}'$.
+
+Following the similar calculations to ${\pmb E z}_{t}{\pmb z}_t'$, we can obtain
+\begin{eqnarray*}\label{modeln31}
+   {\pmb Ez}_{t}{\pmb z}_{t-1}'
+     &=&    {\bf C}[\rho
+         {\bf I}-{\bf C}^{-1}\pmb {B\beta}^2{\bf C}]^{-1}\sum_{n=1}^\infty[\rho^{n+1}
+        {\bf I}-{\bf C}^{-1}(\pmb {B\beta}^2)^{n+1}{\bf C}]{\pmb\Sigma}[\rho^{n}{\bf I}-({\bf C}^{-1}(\pmb {B\beta}^2)^{n}{\bf C})']\cdot\nonumber\\
+        &&[\rho
+         {\bf I}-({\bf C}^{-1}\pmb {B\beta}^2{\bf C})']^{-1} {\bf C}'\nonumber\\
+         &=&\widetilde{k}\left[\begin{array}{cc}
+k_1^2w_1^*+k_1k_2(w_2^*+w_3^*)+k_2^2w_4^*&k_1k_3w_1^*+k_1k_4w_2^*+k_2k_3w_3^*+k_2k_4w_4^*\\
+k_1k_3w_1^*+k_2k_3w_2^*+k_1k_4w_3^*+k_2k_4w_4^*&k_3^2w_1^*+k_3k_4(w_2^*+w_3^*)+k_4^2w_4^*
+\end{array}\right],
+\end{eqnarray*}
+
+
+
+
+where $\widetilde{k}, \,\,k_i$ are given in (\ref{varzexp1}) and (\ref{k1})-(\ref{k4}), and
+\begin{eqnarray*}
+w_1^*&=&\sigma_1^2\Big\{(d_1d_4-d_2d_3)^2\frac{\rho}{1-\rho^2}-d_1d_4(d_1d_4-d_2d_3)\frac{\rho+\lambda_1}{1-\rho\lambda_1}+(d_1d_4)^2\frac{\lambda_1}{1-\lambda_1^2}\nonumber\\
+                          &&+d_2d_3(d_1d_4-d_2d_3)\frac{\rho+\lambda_2}{1-\rho\lambda_2}-d_1d_2d_3d_4\frac{\lambda_1+\lambda_2}{1-\lambda_1\lambda_2}+(d_2d_3)^2\frac{\lambda_2}{1-\lambda_2^2}\Big\}\nonumber\\
+                          &&+\sigma_2^2(d_1d_2)^2\Big
+[\frac{\lambda_2}{1-\lambda_2^2}-\frac{\lambda_1+\lambda_2}{1-\lambda_1\lambda_2}+\frac{\lambda_1}{1-\lambda_1^2}\Big],\label{w1star}\\
+ w_2^*&=&\sigma_1^2d_3d_4\Big\{(d_1d_4-d_2d_3)\Big[\frac{\rho}{1-\rho\lambda_2}-\frac{\rho}{1-\rho\lambda_1}\Big]+\frac{d_1d_4\lambda_1}{1-\lambda_1^2}-\frac{d_1d_4\lambda_1+d_2d_3\lambda_2}{1-\lambda_1\lambda_2}+\frac{d_2d_3\lambda_2}{1-\lambda_2^2}\Big\}\nonumber\\
+                         &&+\sigma_2^2d_1d_2\Big\{(d_1d_4-d_2d_3)\Big[\frac{\lambda_1}{1-\rho\lambda_1}-\frac{\lambda_2}{1-\rho\lambda_2}\Big]+\frac{d_2d_3\lambda_1}{1-\lambda_1^2}-\frac{d_1d_4\lambda_1+d_2d_3\lambda_2}{1-\lambda_1\lambda_2}+\frac{d_1d_4\lambda_2}{1-\lambda_2^2}\Big\},\label{w2star}\\
+ w_3^*&=&\sigma_1^2d_3d_4\Big\{(d_1d_4-d_2d_3)\Big[\frac{\lambda_2}{1-\rho\lambda_2}-\frac{\lambda_1}{1-\rho\lambda_1}\Big]+\frac{d_1d_4\lambda_1}{1-\lambda_1^2}-\frac{d_1d_4\lambda_2+d_2d_3\lambda_1}{1-\lambda_1\lambda_2}+\frac{d_2d_3\lambda_2}{1-\lambda_2^2}\Big\}\nonumber\\
+                         &&+\sigma_2^2d_1d_2\Big\{(d_1d_4-d_2d_3)\Big[\frac{\rho}{1-\rho\lambda_1}-\frac{\rho}{1-\rho\lambda_2}\Big]+\frac{d_1d_4\lambda_2}{1-\lambda_2^2}-\frac{d_1d_4\lambda_2+d_2d_3\lambda_1}{1-\lambda_1\lambda_2}+\frac{d_2d_3\lambda_1}{1-\lambda_1^2}\Big\},\label{w3star}\\
+ w_4^*&=&\sigma_1^2(d_3d_4)^2\Big
+[\frac{\lambda_2}{1-\lambda_2^2}-\frac{\lambda_1+\lambda_2}{1-\lambda_1\lambda_2}+\frac{\lambda_1}{1-\lambda_1^2}\Big]+\sigma_2^2\Big\{(d_1d_4-d_2d_3)^2\frac{\rho}{1-\rho^2}\nonumber\\
+&&-d_1d_4(d_1d_4-d_2d_3)\frac{\rho+\lambda_2}{1-\rho\lambda_2}+(d_1d_4)^2\frac{\lambda_2}{1-\lambda_2^2}+d_2d_3(d_1d_4-d_2d_3)\frac{\rho+\lambda_1}{1-\rho\lambda_1}\nonumber\\
+                          &&-d_1d_2d_3d_4\frac{\lambda_1+\lambda_2}{1-\lambda_1\lambda_2}+(d_2d_3)^2\frac{\lambda_1}{1-\lambda_1^2}\Big\}.\label{w4star}
+\end{eqnarray*}
+
+
+Again through very technical calculations, the first-order auto-covariances of output gap and inflations are further simplified as
+
+ \begin{eqnarray}
+&&E(y_ty_{t-1})=\frac{1}{\widetilde{k}}( k_1^2w_1^*+k_1k_2(w_2^*+w_3^*)+k_2^2w_4^*)\nonumber\\
+&=&\frac{1}{(1+\gamma\varphi\phi_\pi+\varphi\phi_y)^2(1-\rho^2)(1-\rho\lambda_1)(1-\lambda_1^2)(1-\rho\lambda_2)(1-\lambda_2^2)(1-\lambda_1\lambda_2)}\nonumber\\
+&&\Big\{\sigma_1^2\Big[(\rho+\lambda_1+\lambda_2-\lambda\beta_2^2)[1-\lambda\beta_2^2(\rho+\lambda_1+\lambda_2)]+[\lambda\beta_2^2(\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2)-\nonumber\\
+&&\rho\lambda_1\lambda_2][(\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2)-\lambda\beta_2^2\rho\lambda_1\lambda_2]\Big]+\sigma_2^2\Big[(\varphi\phi_\pi(\rho+\lambda_1+\lambda_2)-\varphi\beta_2^2))\nonumber\\
+&&[\varphi\phi_\pi-\varphi\beta_2^2(\rho+\lambda_1+\lambda_2)]+[\varphi\beta_2^2(\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2)-\varphi\phi_\pi\rho\lambda_1\lambda_2]\nonumber\\
+&&[\varphi\phi_\pi(\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2)-\varphi\beta_2^2\rho\lambda_1\lambda_2]\Big]\Big\},\label{covy1app}\\
+&&E(\pi_t\pi_{t-1})=\frac{1}{\widetilde{k}}( k_3^2w_1^*+k_3k_4(w_2^*+w_3^*)+k_4^2w_4^*)\nonumber\\
+&=&\frac{1}{(1+\gamma\varphi\phi_\pi+\varphi\phi_y)^2(1-\rho^2)(1-\rho\lambda_1)(1-\lambda_1^2)(1-\rho\lambda_2)(1-\lambda_2^2)(1-\lambda_1\lambda_2)}\nonumber\\
+&&\Big\{\sigma_1^2\Big[\gamma^2[(\rho+\lambda_1+\lambda_2)-\rho\lambda_1\lambda_2(\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2)]\Big]+\sigma_2^2\Big[[(1+\varphi\phi_y)(\rho+\lambda_1+\lambda_2)-\beta_1^2]\cdot\nonumber\\
+&&[(1+\varphi\phi_y)-\beta_1^2(\rho+\lambda_1+\lambda_2)]+[\beta_1^2(\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2)-(1+\varphi\phi_y)\rho\lambda_1\lambda_2]\cdot\nonumber\\
+&&[(1+\varphi\phi_y)(\rho\lambda_1+\rho\lambda_2+\lambda_1\lambda_2)-\beta_1^2\rho\lambda_1\lambda_2]\Big]\Big\}.\label{oovpi1app}
+\end{eqnarray}
+
+
+
+Therefore, the first-order autocorrelation coefficients of output gap and inflation
+$$G_{1}(\beta_1,\beta_2)=\frac{E(y_ty_{t-1})}{E(y_t^2)},\,\,\,\,
+G_{2}(\beta_1,\beta_2)=\frac{E(\pi_t\pi_{t-1})}{E(\pi_t^2)},$$
+i.e. the equations (\ref{acynk})-(\ref{acpink}).
+
+\section{Stability for the Taylor rule}\label{corpsacroof}
+ Based on Proposition \ref{prop:stab}, we only need to show that both of the eigenvalues of $({\pmb I}-{\pmb B\pmb \beta}^2)^{-1}({\pmb B}-{\pmb I})$ have negative real parts if $\gamma(\phi_\pi-1)+(1-\lambda)\phi_y>0$.
+
+ The characteristic polynomial of $({\pmb I}-{\pmb B\pmb \beta}^2)^{-1}({\pmb B}-{\pmb I})$ is given by $h(\nu)=\nu^2-c_1\nu+c_2,$
+where $c_1$ is the trace and $c_2$ is the determinant of matrix $({\pmb I}-{\pmb B\pmb \beta}^2)^{-1}({\pmb B}-{\pmb I})$. Direct calculation shows that
+\begin{eqnarray}
+c_1&=&\frac{-(1-\lambda)(1-\beta_1^2)-2\varphi(\gamma\phi_\pi+\phi_y)+\varphi(\gamma+\lambda\phi_y)(1+\beta_2^2)}{\vartriangle(1+\gamma\varphi\phi_\pi+\varphi\phi_y)},\\
+c_2&=&\frac{\varphi[\gamma(\phi_\pi-1)+(1-\lambda)\phi_y]}{\vartriangle(1+\gamma\varphi\phi_\pi+\varphi\phi_y)},
+\end{eqnarray}
+where $\vartriangle=\frac{(1-\beta_1^2)(1-\lambda\beta_2^2)+\gamma\varphi\phi_\pi+\varphi\phi_y-(\gamma\varphi+\lambda\varphi\phi_y)\beta_2^2}{1+\gamma\varphi\phi_\pi+\varphi\phi_y}$.
+
+Both of the eigenvalues of $({\pmb I}-{\pmb B\pmb \beta}^2)^{-1}({\pmb B}-{\pmb I})$ have negative real parts if and only if $c_1<0$ and $c_2>0$ (these conditions are obtained by applying the \emph{Routh-Hurwitz criterion theorem}; see Brock and Malliaris, 1989). If $\gamma(\phi_\pi-1)+(1-\lambda)\phi_y>0$,  from Appendix \ref{apdix_deter} it is easy to see $\vartriangle>0$. Furthermore,
+\begin{eqnarray*}
+c_1\leq\frac{-2\varphi[(\gamma(\phi_\pi-1)+(1-\lambda)\phi_y]}{\vartriangle(1+\gamma\varphi\phi_\pi+\varphi\phi_y)}<0,\quad c_2>0.
+\end{eqnarray*}
+
+\section{Data Appendix} 
+\label{app_data}
+
+The observable variables used in our estimations follow the definitions in Smets \& Wouters (2007). Accordingly: \\
+\begin{equation}
+\begin{cases}
+y^{obs}_t=100 log({GDPC09_t}/LNS_{index_t})\\ 
+\pi^{obs}_t=100 log(\frac{GDPDEF09_t}{GDPDEF09_{t-1}})\\
+r^{obs}_t=100 log(\frac{Funds_t}{4})
+\end{cases}\\
+\label{eqn:a_1}
+\end{equation}
+where the time series are given as: \\
+\textbf{GDPC09:} Real GDP, Billions of Chained 2009 Dollars, Seasonally Adjusted Annual Rate. Source: Federal Reserve Economic Data (FRED).\\
+\textbf{GDPDEF09:} GDP-Implicit Price Deflator, 2009=100, Seasonally Adjusted. Source: FRED.\\
+\textbf{LNU00000000:}Unadjusted civilian noninstitutional population, Thousands, 16 years\& over. Source: U.S. Bureau of Labor Statistics (BLS)\\
+\textbf{LNS10000000:} Civilian noninstitutional populations, Thousands, 16 years \& over, Seasonally Adjusted.\\ Source: BLS. \\
+$LNS_{index}=\frac{LNS10000000}{LNS10000000(1992:03)}$\\
+Source: FRED.\\
+\textbf{Funds}:Federal Funds Rate, Daily Figure Averages in Percentages. Source: FRED.\\ 
+The observable variable $x_t^{obs} $ for the output gap in our main estimations is based on the HP-filtered series of $y_t^{obs}$, while the CBO-based output gap is defined as: 
+$x_t = 100 \frac{GDPC09-GDPPOT}{GDPPOT}$\\
+with \textbf{GDPPOT}\footnote{In order to calculate the potential output, CBO uses the theoretical framework in a standard Solow growth model setup, see CBO (2001) for more details.}: CBO's Estimate of the Potential Output, Billions of Chained 2009 Dollars, Not Seasonally Adjusted Quarterly Rate. Source: FRED.\\ 
+
+
+
+\end{appendix}
+

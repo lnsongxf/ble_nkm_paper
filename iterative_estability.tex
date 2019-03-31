@@ -1,0 +1,225 @@
+\subsection{Estimation of BLE}
+\label{sec:iterative_ble}
+
+As our application to the NK model in the next section will illustrate, finding an analytical expression for a BLE is in general not possible. Therefore we provide a general iteration method to estimate a BLE of the linear system (\ref{xf1}) and (\ref{div2}). The main challenge here is to estimate the structural parameters together with the BLE belief parameters $\pmb{\beta}^{*}$ that satisfy a highly non-linear consistency (fixed point) constraint $\pmb{\beta}^{*}=G(\pmb{\beta}^{*})$. We first use the notion of iterative E-stability to find an approximate BLE. An advantage of this method is that when it converges, the BLE is always stable under adaptive learning. We next propose an iterative estimation procedure, which is closely linked to the notion of iterative E-stability and which is a recursion of Bayesian estimation of linear models. 
+
+
+We first re-write the system by augmenting $ \pmb{x}_t $  with $ \pmb{u}_t $ to obtain
+\begin{equation}
+ \begin{bmatrix}   \pmb{I} & \pmb{-b}_3 \\ \pmb{0} & \pmb{I} \\     \end{bmatrix}  \begin{bmatrix} \pmb{x}_t \\ \pmb{u}_t \end{bmatrix} = \begin{bmatrix}  \pmb{b}_0 \\ \pmb{a} \end{bmatrix}+ \begin{bmatrix} \pmb{b}_2 & \pmb{0} \\ \pmb{0} & \pmb{\rho} \\ \end{bmatrix} \begin{bmatrix} \pmb{x}_{t-1} \\ \pmb{u}_{t-1} \end{bmatrix}+ \begin{bmatrix} \pmb{b}_1 & \pmb{0} \\ \pmb{0} & \pmb{0} \\ \end{bmatrix} \begin{bmatrix} \pmb{x}_{t+1}^e \\ \pmb{u}_{t+1}^e \end{bmatrix}  + \begin{bmatrix} \pmb{b}_4 & \pmb{0} \\ \pmb{0} & \pmb{I} \end{bmatrix} \begin{bmatrix} \pmb{v}_t \\ \pmb{\epsilon}_t \end{bmatrix}.
+\label{eqn:2_6}
+\end{equation}
+\noindent
+Defining\footnote{We assume the invertibility conditions of the corresponding matrices are satisfied throughout the paper.}
+$$ \begin{bmatrix} \pmb{x}_t \\ \pmb{u}_t \end{bmatrix} = S_t,  
+\begin{bmatrix} \pmb{v}_t \\ \pmb{\epsilon}_t \end{bmatrix} = \eta_t,  
+\begin{bmatrix}   \pmb{I} & \pmb{-b}_3 \\ \pmb{0} & \pmb{I} \\     \end{bmatrix}= \tilde{\gamma},
+\tilde{\gamma}^{-1} \begin{bmatrix}  \pmb{b}_0 \\ \pmb{a} \end{bmatrix} = \bar{\gamma}, \hspace{2 mm}
+ \hspace{2 mm}
+\tilde{\gamma}^{-1}\begin{bmatrix} \pmb{b}_2 & \pmb{0} \\ \pmb{0} & \pmb{\rho} \\ \end{bmatrix} = \gamma_1,$$
+$$\tilde{\gamma}^{-1}\begin{bmatrix} \pmb{b}_1 & \pmb{0} \\ \pmb{0} & \pmb{0} \\ \end{bmatrix} = \gamma_2,\hspace{2 mm}
+\tilde{\gamma}^{-1}\begin{bmatrix} \pmb{b}_4 & \pmb{0}\\\pmb{0} & \pmb{I} \end{bmatrix}=\gamma_3.\hspace{2 mm}
+ $$ 
+We can re-write the law of motion as
+\begin{equation}
+S_t = \bar{\gamma} + \gamma_1 S_{t-1} + \gamma_2 S_{t+1}^e + \gamma_3 \eta_t.
+\label{eqn:2_7}
+\end{equation}
+Denote the learning vector for the mean parameters $ \pmb{ \alpha }$, and the diagonal learning matrix for the first-order autocorrelation parameters $\pmb{ \beta} $, with the corresponding learning parameters by $ \alpha_{x} $ and $\beta_{x} $ for each endogenous variable $ x_t$ as before\footnote{Without loss of generality, we assume the first N variables in $ S_t$ are the forward-looking variables and we introduce zeros for the remaining state variables and exogenous shocks.}. Then the agent's PLM, the corresponding one-step ahead expectations and the implied ALM are given as 
+%$$
+%\begin{cases}
+%\boldsymbol{ \alpha } = (\alpha_{1} \hspace{2 mm} \alpha_{2} ... \alpha_{N}, \boldsymbol{0_{1,K-N}})' \\
+%$$\boldsymbol{ \beta} = diag(\beta_{1} \hspace{2 mm} \beta_{2} ... \beta_{N}, \boldsymbol{0_{1,K-N}}),
+%\end{cases}
+%$$
+%\noindent
+%where $ \boldsymbol{0_{1,K-N}}$ denotes a zero vector of length $K-N$. 
+
+
+\begin{equation}
+\begin{cases}
+S_t = \pmb{\alpha} + \pmb{\beta} ( S_{t-1} - \pmb{\alpha}) + \pmb{\delta_t},\\
+ E_t S_{t+1} = \pmb{\alpha} + \pmb{\beta}^2 (S_{t-1} - \pmb{\alpha}),\\
+ S_t =(\bar{\gamma}+\pmb{\alpha}-\pmb{\beta}^2 \pmb{ \alpha})+ \gamma_1 S_{t-1} + \gamma_2 \pmb{\beta}^2 S_{t-1} + \gamma_3 \eta_t. \label{eqn:2_9}
+ \end{cases}
+\end{equation}
+
+\noindent
+Our main focus in this section is to estimate log-linearized DSGE models, where the mean $\pmb{\alpha^{*}}$ is available based on (\ref{sceex}). Without loss of generality, we focus on the case where $\pmb{\alpha^{*}} = 0 $. Denoting by $\pmb{\Gamma}(0)$ and $\pmb{\Gamma}(-1)$ the variance-covariance and first-order covariance matrices as before, one can show that\footnote{See Appendix \ref{ACFn}.}
+
+\begin{equation}
+\begin{cases}
+Vec(\pmb{\Gamma}(0))  = [I - M(\pmb{ \beta^{*}}) \otimes M(\pmb{\beta^{*}}) ]^{-1} (\gamma_3 \otimes \gamma_3  ) Vec(\pmb{\Sigma_{\eta}}), \\
+Vec(\pmb{\Gamma}(-1))= [I \otimes M(\pmb{\beta^{*}})] Vec(\pmb{\Gamma}(0)),\\
+\end{cases}
+\label{eqn:2_13}
+\end{equation}
+\noindent
+where $M(\pmb{\beta}^{*})=\gamma_1+\gamma_2 \pmb{{\beta}^{*}}^2$, and $\pmb{\Sigma_{\eta}}$ is the variance-covariance matrix of i.i.d disturbances $\eta_t$. This implies that ${\beta_j}^{*} = \frac{Vec(\pmb{\Gamma}(-1))_{N(j-1)+j}}{Vec(\pmb{\Gamma}(0))_{N(j-1)+j}} =G_j( \pmb{\beta}^{*},\theta)$, $1 \leq j \leq N$, where $\theta$ represents the set of structural parameters in $\gamma_1, \gamma_2$ and $\gamma_3$. Then every {BLE} satisfies
+
+\begin{equation}
+\begin{cases}    
+S_t = \gamma_1 S_{t-1} + \gamma_2 \pmb{{\beta}^{*}}^2 S_{t-1} + \gamma_3 \eta_t \\
+\beta_j^{*} = \frac{Vec(\pmb{\Gamma_{-1}})_{N(j-1)+j}}{Vec(\pmb{\Gamma_0})_{N(j-1)+j}} =G_j(\pmb{ \beta}^{*},\theta), 1 \leq j \leq N.\\
+%Vec(\Gamma_0(\beta_1^{*}...\beta_N^{*}))=Vec(\Gamma_0)  = [I - M(\boldsymbol \beta^{*}) \otimes M(\boldsymbol\beta^{*}) ]^{-1} (\gamma_3 \otimes \gamma_3 ) Vec(\Sigma_{\eta}) \\
+%Vec(\Gamma_1(\beta_1^{*}...\beta_N^{*}))=Vec(\Gamma_1)= [I \otimes M(\boldsymbol \beta^{*})] Vec(\Gamma_0)\\
+%M(\boldsymbol \beta^{*})=\gamma_1+\gamma_2\boldsymbol \beta^{*}^2  \\
+\end{cases} \\
+\label{eqn:prop2_1}
+\end{equation}
+
+\noindent
+The E-stability conditions of Proposition 2 are easily simplified to the case with zero mean. Accordingly, a {BLE} $(\pmb{0},  \hspace{1 mm} \pmb{\beta}^{*})$ is locally stable if all eigenvalues of $(I-\gamma_1-\gamma_2 \pmb{ {\beta}^{*}}^2)(\gamma_1+\gamma_2-I)$ have negative real parts and all eigenvalues of $DG_{\pmb{\beta}}(\pmb{\beta}^{*})$ have real parts less than one. Note that the first condition governs the stability of mean coefficients, while the second condition relates to stability of first-order autocorrelation coefficients {\it independent} of $\pmb{\alpha^{*}}$.\\
+
+\subsection*{Iterative E-stability and Estimation of BLE} 
+
+
+The first-order autocorrelation coefficients $\pmb{\beta}^{*}$ in (\ref{eqn:prop2_1}) are functions in terms of the structural parameters $\theta$, which satisfy the highly nonlinear equilibrium conditions $G_j(\pmb{ \beta}^{*},\theta)=\pmb{\beta}^{*}$ and cannot be computed analytically. In order to find a BLE for a given $\theta$, we use a simple fixed-point iteration, which is formalized below in Algorithm I. 
+
+
+\begin{table}[!htbp]
+
+%\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+\hrule
+\hrule
+
+\vspace{2 mm}
+{\textbf{Algorithm I: Approximation of a BLE using Iterative E-stability}}
+
+\vspace{2 mm}
+
+\hrule
+\hrule
+
+
+\vspace{2 mm}
+Denote by $\theta$ the set of structural parameters, and by $G(\pmb{ \beta^{(k)}},\theta)$ the first-order autocorrelation function for a given $\theta$.
+
+%Denote by $\theta$ the set of structural parameters, and by $G(\boldsymbol \beta^{(k)},\theta)=diag( G_1(\boldsymbol \beta^{(k)},\theta),...G_N(\boldsymbol \beta^{(k)},\theta))$ the first-order autocorrelation function for a given $\theta$.
+
+\begin{itemize}
+\item{Step (0)}: Initialize the vector of learning parameters at ${\pmb{\beta^{(0)}}}$.
+%=(\beta_1^{(0)},...,\beta_N^{(0)}).$
+\item{Step (I)}: At each iteration $k$, using the first-order autocorrelation functions, update the vector of learning parameters as
+\begin{equation}
+%\forall j=\{1,...,N\}, \beta_j^{(k)}=G_j(\boldsymbol \beta^{(k-1)},
+%\theta)
+\pmb{\beta^{(k)}}=G(\pmb{ \beta^{(k-1)}},\theta),\\
+%\forall j=\{1,...,N\}, \beta_j^{(k)}=G_j(\boldsymbol \beta^{(k-1)},
+%\theta) \Rightarrow \boldsymbol \beta^{(k)}=G(\boldsymbol \beta^{(k-1)}),\\
+\label{eqn:2_15}
+\end{equation}
+where $G(\pmb{\beta^{(k-1)}},\theta)$ is known at iteration $k-1$.
+\item{Step (II)}: Terminate if $||\pmb{ \beta^{(k)}} -\pmb{ \beta^{(k-1)}}||_{p} < \epsilon $, for a small scalar $\epsilon>0$\tablefootnote{Throughout the remainder of this paper, we use the common $L^1$-Norm as our norm distance, i.e. $||\pmb{ \beta^{(k)}} -\pmb{\beta^{(k-1)}}||_{p}= \sum_{j=1}^N |\beta_j^{(k)}-\beta_j^{(k-1)}|$.}
+\noindent and a suitable norm distance $||.||_{p}$, otherwise repeat Step (I). 
+\end{itemize}
+
+\hrule
+\hrule
+
+\label{algo1}
+\end{table}
+
+%\begin{prop}
+ A BLE $(\pmb{0}, \pmb{\beta^{*}})$ is locally stable under (\ref{eqn:2_15}) if all eigenvalues of $DG_{\pmb{\beta}}(\pmb{\beta^{*}})$ lie inside the unit circle. Then the equilibrium is said to be \textit{iteratively E-stable}. When Algorithm I terminates for some $K$ at a pre-specified $\epsilon$, we say that it has converged to $\pmb{\beta^{(K)}}$. First note that, if Algorithm I converges, it converges to an approximate BLE since 
+$$ ||\pmb{ \beta^{(K+1)}} -\pmb{ \beta^{(K)}}|| < c \Rightarrow ||\pmb{ G(\beta^{(K)}}) -\pmb{ \beta^{(K)}}|| < c \Rightarrow \pmb{ G(\beta^{(K)}}) \approx \pmb{ \beta^{(K)}}. $$
+%If Algorithm I converges to a stationary law of motion for a given $K$, the corresponding $(\pmb{0}, \pmb{\beta^{(K)}})$ = $(\pmb{0},\pmb{\beta^{*}})$ is a BLE. 
+%Furthermore, if all eigenvalues of $DG_{\pmb{\beta}}(\pmb{\beta^{*}})$ lie inside the unit circle, then $G(.)$ is a contraction on a neighbourhood $\hat{I}$ of $\pmb{\beta^{*}}$ and for all $ \pmb{\beta^{(0)}} \in \hat{I}$, we have $lim_{k \rightarrow \infty} G^k(\pmb{\beta^{(0)}}) = \pmb{ \beta^{*}}$. Then the resulting BLE is \textbf{iteratively E-stable}.
+%\label{prop:iter_estab}
+%\end{prop}
+%\textbf{Proof.} See Appendix \ref{app_iterative_stab}.
+
+\noindent
+Further note that, if we assume the learning dynamics for the mean $\pmb{\alpha^{*}}$ are E-stable\footnote{Using Proposition \ref{prop:stab}, the E-stability condition for $\pmb{\alpha^{*}}=0$ is satisfied when $\xi((I-(\gamma_1+\gamma_2 \pmb{{\beta^{*}}}^2))(\gamma_1+\gamma_2-I))<0$, where $\xi(G(\pmb{\beta^{*}}))=max \{ Re(\lambda): \lambda \in \mathbb{C}$ an eigenvalue of $DG(\pmb{\beta^{*}}) \}$.}, there is a simple connection between Iterative E-stability and E-stability of $\pmb{\beta^{*}}$: for E-stability, the real parts of all eigenvalues of $DG(\pmb{ \beta^{*}})$ must be less than one, while iterative E-stability requires the eigenvalues to lie inside the unit circle. This immediately implies that iterative E-stability is a stronger condition than E-stability, which gives us the following corollary. 
+
+\begin{cor}
+Iterative E-stability of $\pmb{\beta^{*}}$ implies E-stability of $\pmb{\beta^{*}}$. Therefore if Algorithm I converges, it converges to an E-stable approximate BLE.
+\end{cor}
+
+The iteration function in (\ref{eqn:2_15}) plays an important role for the above corollary, where our choice of the function $G(.)$ reduces Algorithm I to the simplest fixed-point iteration known as \textit{Iterative E-stability} in the adaptive learning literature (Evans \& Honkapohja, 2001). Iterations of this type have been used as a learning algorithm in the earlier literature, see e.g. DeCanio (1979), Bray (1982) and Evans (1985). In this paper, we use it as our approximation method, which allows us to eliminate E-unstable BLE without additional steps. As an alternative, one could also  consider a Quasi-Newton iteration of the following form: 
+
+\begin{equation}
+\pmb{\beta^{(k)}} = \pmb{\beta^{(k-1)}} - DF(\pmb{ \beta^{(k-1)}},\theta)^{-1}F(\pmb{ \beta^{(k-1)}},\theta).
+\label{eqn:2_16}
+\end{equation}
+
+\noindent
+where $ F(\pmb{\beta},\theta) = \pmb{\beta}- G(\pmb{\beta},\theta) $  and $ DF_{\pmb{\beta}}(\pmb{ \beta},\theta) $ denotes the Jacobian of $ F(\pmb{\beta},\theta)$\footnote{ At each iteration $k$, we approximate the Jacobian using $\frac{\partial F_i(\pmb{\beta^{(k)}})}{\partial \beta_j^{(k)}}\approx \frac{F_i(\pmb{ \beta^{(k)}}+ h \vec{e_j})-F_i(\pmb{ \beta^{(k)}}) }{h}$, $  1 \leq   i,j \leq N  $, where $\vec{e_j}$ denotes a suitable unit vector.}. This latter algorithm has been used in e.g. Farmer et. al. (2009) to compute MSV-solutions in Markov-switching models. However, a downside of the Quasi-Newton iteration in our context is that both E-stable and E-unstable BLE are locally stable under (\ref{eqn:2_16}), which means this iteration method is not informative about E-stability of BLE\footnote{See Appendix \ref{app_iterative_stab} for a formal treatment of this and our online appendix for an example.}. Therefore we use the notion of \textit{Iterative E-stability} in our estimations.  \\
+
+
+The discussion up to this point is based on finding E-stable BLE for a given set of structural model parameters $\theta$. In the following,  we provide a straightforward extension of Algorithm I to accommodate  the joint estimation of the structural parameters and the BLE parameters.  In order to estimate the model, we add a set of measurement equations to the law of motion in $(\ref{eqn:prop2_1})$ as follows:
+\begin{equation}
+y_t = \psi_0(\theta)+\psi_1(\theta)S_t + h_t,
+\label{eqn:2_21}
+\end{equation}
+where $y_t$ denotes a vector of observable variables, $h_t$ is a vector of measurement errors, $\psi_0(\theta)$ and $\psi_1(\theta)$ are matrices of the structural parameters that relate the  state variables $S_t$ and the observable variables $y_t$. Together with  (\ref{eqn:prop2_1}),  (\ref{eqn:2_21}) yields the state-space representation of the DSGE model under BLE. The model is \textit{linear} in the state variables $S_t$, but the BLE learning parameters $\pmb{\beta}^{*}$ are  a highly non-linear function in terms of the structural parameters $\theta$ to be estimated. On the one hand, given the non-linear function $\pmb{\beta}^{*} = G(\pmb{\beta}^{*}, \theta) $, we can find $\pmb{\beta}^{*}$ using iterative E-stability  for a given $\theta$. On the other hand, whenever $\pmb{\beta}$ is temporarily fixed at $\pmb{\beta}^{(k)}$ at the $k^{th}$ iteration, the model reduces to a linear state-space model that can be estimated using standard Bayesian methods. Based on this, we consider an iterative routine where the structural parameters $\theta$ and belief parameters $\pmb{\beta}$ are estimated sequentially. The estimation is summarized in Algorithm II.  
+
+\FloatBarrier
+
+\begin{table}[!htbp]
+\small
+\hrule
+\hrule
+\vspace{2 mm}
+{\textbf{Algorithm II: Bayesian Estimation of an (iteratively) E-stable BLE}}\\
+\label{algo2}
+\hrule
+\hrule
+\vspace{2 mm}
+
+Denote by $Y_{1:T}=\{Y_1,\cdots,Y_T \}$ the matrix of the observable variables up to period $T$, and by $p(\theta)$ the prior distributions for the structural parameters $\theta$ that appear in matrices $\gamma_1$, $\gamma_2$ and $\gamma_3$. Consider the system characterized by  (\ref{eqn:prop2_1}) and (\ref{eqn:2_21}):
+%where $\theta$ denotes the set of structural parameters in $\gamma_1, \gamma_2$ and $\gamma_3$: \\
+\begin{equation}
+\begin{cases}    
+S_t = \gamma_1(\theta) S_{t-1}+\gamma_2(\theta) \pmb{ {\beta}^{*}}^2 S_{t-1}+\gamma_3(\theta) \eta_t\\
+\beta^{*}_j=G_j(\pmb{ \beta}^{*},\theta), 1 \leq j \leq N\\
+y_t = \psi_0(\theta) + \psi_1(\theta) S_t + h_t \\
+\label{eqn:2_22}
+\end{cases}
+\end{equation}
+\begin{itemize}
+\item \textbf{Step (0)} Initialize a set of learning parameters $\pmb{ \beta^{(0)}}$. At the (temporarily) fixed $\pmb{ \beta^{(0)}}$, the system (\ref{eqn:2_22}) reduces to a standard state-space representation for the linearized DSGE model. 
+
+\item \textbf{Step (I-a)} At each iteration $k$, one can obtain the likelihood function using the Kalman filter and the corresponding posterior distribution conditional on $\beta^{(k-1)}$ as follows\tablefootnote{For a detailed textbook derivation of the likelihood function and the posterior distribution,  see e.g. Greenberg (2012) or Herbst \& Schorfheide (2015). In this paper, we make use of the routines available in Dynare to estimate the model at each step for a given set of fixed learning parameters.}:
+\begin{equation}
+p(Y_{1:T}|\theta,\pmb{\beta}^{(k-1)}) = \sum_{t=1}^{T} p(y_t | Y_{1:T-1},\theta, \pmb{\beta}^{(k-1)}); \hspace{3 mm} p(\theta|Y_{1:T},\pmb{\beta}^{(k-1)}) = \frac{p(Y_{1:T}|\theta,\pmb{ \beta}^{(k-1)})p(\theta)}{p(Y_{1:T},\pmb{\beta}^{(k-1)})},  \label{eqn:2_23}
+\end{equation}
+where $\pmb{\beta^{(k-1)}}$ is obtained from iteration $k-1$, and $p(Y_{1:T},\pmb{ \beta^{(k-1)}})$ denotes the marginal likelihood function. Denote by $\hat{\theta}^{(k)}$ the conditional posterior mode obtained from 
+
+
+
+\begin{equation}
+\hat{\theta}^{(k)}=\underset{\theta}{\operatorname{argmax}} \hspace{2 mm} p(\theta|Y_{1:T},\pmb{\beta^{(k-1)}}).
+\label{eqn:theta_argmax}
+\end{equation}
+\item \textbf{Step (I-b)} Using $\hat{\theta}^{(k)}$, update the matrix of learning parameters:
+\begin{equation}
+{\beta_j^{(k)}}= G_j(\pmb{ \beta^{(k-1)}}, \hat{\theta}^{(k)}), 1 \leq j \leq N.
+\label{eqn:beta_argmax}
+\end{equation}
+\item \textbf{Step(II)} Proceed to Step (III) if  $||\pmb{ \beta^{(k)}} - \pmb{ \beta^{(k-1)}} || <\epsilon $ and $||\hat{\theta}^{(k)} - \hat{\theta}^{(k-1)} || <\epsilon $ for a given scalar $\epsilon>0$, otherwise repeat Step (I).
+\item \textbf{Step(III)} Use the Metropolis-Hastings algorithm to construct the posterior distribution \textit{conditional on the BLE} at the posterior mode. \\
+%\item \textbf{Step(IV):} At the estimated posterior mode $\hat{\theta}^{(k)}$, apply Monte Carlo simulations and Algorithm I with randomized initial values to check for multiplicity of locally stable BLE. 
+\vspace{1.5 mm}
+\hrule
+\hrule
+\end{itemize}
+\end{table}
+
+\FloatBarrier
+
+%\begin{prop}
+A BLE $(\pmb{0},\pmb{\beta^{*}})$ satisfying $G(\pmb{\beta^{*}},\theta^{*})=\pmb{\beta^{*}}$ and  ${\theta}^{*}=\underset{\theta}{\operatorname{argmax}} p(\theta|Y_{1:T},\pmb{\beta^{*}}) $, is locally stable under (\ref{eqn:theta_argmax}) and (\ref{eqn:beta_argmax}) if all eigenvalues of $DG(\pmb{ \beta}^{*},{ \theta}^{*})$ lie inside the unit circle\footnote{ In order to formally rule out explosive outcomes, one can augment the algorithm with a projection facility, where the next iteration is projected to a point inside the unit cube if the iteration $G(\pmb{ \beta}^{k-1}) $ leads to $|\beta^{(k)}_i|>1$ for some $ 1 \leq  i \leq N $. We do not observe such outcomes in the NK model considered in this paper and therefore do not use a projection facility.}$^{,}$\footnote{The eigenvalue condition under (\ref{eqn:theta_argmax}) and (\ref{eqn:beta_argmax}) is slightly different than the eigenvalue condition under (\ref{eqn:2_15}), since the second argument $\theta^{*}$ of $G(\pmb{\beta^{*}},\theta^{*})$ also depends on $\pmb{\beta^{*}}$, see Appendix \ref{app_iterative_stab} for more details.}.
+%\end{prop}
+%\textbf{Proof.} See Appendix \ref{app_iterative_stab}.\\
+
+
+%\textbf{Remark.} In order to formally rule out explosive outcomes, one can augment the algorithm with a projection facility, where the next iteration is projected to a point inside the unit cube if the iteration $G(\pmb{ \beta}^{k-1}) $ leads to $|\beta^{(k)}_i|>1$ for some $i \in \{1,...,N \}$. We do not observe such outcomes in the examples considered in this paper and therefore do not use a projection facility. 
+%Note that, $\forall \boldsymbol \beta $ with $\beta_i \in (-1,1)$ for each $i \in \{1..N\} $, we have $G(\boldsymbol \beta) \in (-1,1)^N$ since $G(.)$ is the matrix of first-order autocorrelations by definition. This implies, $\forall \boldsymbol \beta^{(0)}$
+%and $\boldsymbol \beta^{*}$ with $\beta_i^{(0)} \in (-1,1)$ and $\beta_i^{*} \in (-1,1)$ for each $i$, we have $G_i(\boldsymbol \beta^{(k)}) \in (-1,1), \forall i \in \{1...N\} $ and $\forall k \in \mathbb{N}$ and hence $\boldsymbol \beta_i^{(k)} \in (-1,1),\forall i \in \{1...N\} $ and $ k \in \mathbb{N}$. Accordingly, as long as $\boldsymbol \beta^{(0)} \in \hat{I}$, each $\beta_i, \forall i \in \{1,...,N\}$ remains inside the unit circle. Therefore given sufficiently good initial values, the system is not arbitrarily pushed into a region with explosive dynamics. One could augment the algorithm with a projection facility to make sure these cases are formally ruled out. We do not observe explosive outcomes in the examples considered in this paper and therefore do not use a projection facility. \\
+
+The estimation routine described as above corresponds to a straightforward extension of Algorithm I, where we allow the structural  parameters $\theta$ (and therefore the matrices $\gamma_1, \gamma_2 $ and $\gamma_3$) to be re-estimated at each step of the fixed-point iteration in (\ref{eqn:2_15}). Our approach is similar to e.g. the computation of initial beliefs in Slobodyan \& Wouters (2012), where the belief coefficients in $\pmb{\beta}$ are treated as separate parameters and estimated along with $\theta$. The main difference here is that we compute the equilibrium beliefs consistent with the underlying {BLE}, such that the first-order autocorrelations in the PLM coincide with the ALM at the estimated posterior mode. In other words, the belief parameters are  consistent with the actual realizations and there is no adaptive learning involved.
+Our estimation approach is fast and easy to implement, because it allows us to approximate and estimate a BLE at the posterior mode of a sequence of linear models. Since the beliefs in $\pmb {\beta}^{(k)}$ are updated at each step $k$ based on the first-order autocorrelations of the state variables, the estimated parameters  $\hat{\theta}^{(k)}$ tend to lead $\pmb { \beta}^{(k)}$ towards the empirically relevant region. In turn, this allows the system to rapidly converge to the underlying {BLE} as we illustrate in the next section. Once we find a BLE along with estimated structural parameters under Algorithm II, we check for (iterative) E-stability and multiplicity of stable equilibria by simulating the system under (\ref{lr}) and (\ref{eqn:2_15})   with randomized initial values. 
+
+As an alternative to this algorithm that directly estimates a BLE, we also consider an estimation routine with SAC-learning based on the Kalman filter output. 
+Since iterative E-stability guarantees convergence under SAC-learning, allowing the agents learn simultaneously with the Kalman filter recursions serves as an indirect approach to estimate a BLE, as well as a robustness check for the empirical fit of a BLE. The model under SAC-learning is conditionally linear for a given set of belief coefficients and therefore one can use the standard Kalman filter to obtain the likelihood function, where the beliefs are updated in each step using the Kalman filter output. Similar approaches have been used in estimating constant gain least squares and Kalman gain adaptive learning models in Milani (2005, 2007) and Slobodyan \& Wouters (2012) respectively. In this paper we focus on the decreasing-gain SAC-learning algorithm since our primary interest is the estimation of the underlying fixed-point BLE, rather than the time-variation in beliefs. See Appendix \ref{app_iterative_stab} for a more detailed description of this approach with SAC-learning.

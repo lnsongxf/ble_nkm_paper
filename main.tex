@@ -1,0 +1,143 @@
+%\def\CTeXPreproc{Created by ctex v0.2.5, don't edit!}
+\documentclass[12pt]{article}
+\usepackage{mathrsfs}
+\textwidth 160mm \textheight 240mm \hoffset -1.4 cm \voffset -1.6cm
+\usepackage[centertags]{amsmath}
+\usepackage{indentfirst}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{pst-all}
+\usepackage{epsfig}
+\usepackage{graphicx,color}
+\usepackage{picinpar}
+\usepackage{subfigure}
+\usepackage{bm}
+\usepackage{makeidx,ifthen}
+\usepackage{amsfonts}
+\usepackage{color,soul}
+\usepackage{rotating}
+\usepackage{tablefootnote}
+\usepackage{hhline}
+\usepackage{placeins}
+\usepackage{comment}
+\newcommand{\updown}[2]{\underset{#2}{#1}\,}
+%\newcommand{\bm}[1]{\mbox{\boldmath{$#1$}}}
+\usepackage{colortbl}
+\newtheorem{defn}{Definition}[section]
+%\newtheorem{thm}{Theorem}[section]
+\newtheorem{thm}{Theorem}
+%\newtheorem{cor}[thm]{Corollary}
+\newtheorem{cor}{Corollary}
+%\newtheorem{lem}[thm]{Lemma}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{rem}{Remark}[section]
+\numberwithin{equation}{section}
+\renewcommand{\baselinestretch}{1.4}
+
+%------------------------------------
+\newcommand{\thmref}[1]{Theorem~\ref{#1}}
+\newcommand{\propref}[1]{Proposition~\ref{#1}}
+\newcommand{\lemref}[1]{Lemma~\ref{#1}}
+\newcommand{\corref}[1]{Corollary~\ref{#1}}
+\newcommand{\remref}[1]{Remark~\ref{#1}}
+\newcommand{\examref}[1]{Example~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\ssecref}[1]{\S\ref{#1}}
+\newcommand{\chapref}[1]{Chapter~\ref{#1}}
+\newcommand{\eqnref}[1]{(\ref{#1})}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\appref}[1]{Appendix~\ref{#1}}
+\newcommand{\assref}[1]{Assumption~\ref{#1}}
+\newcommand{\defref}[1]{Definition~\ref{#1}}
+%-------------------------------------------
+
+\graphicspath{{Figures-Inv/}}
+
+\begin{document}
+
+
+\title{Behavioral Learning Equilibria in the New Keynesian Model}
+\author{Cars Hommes$^{a}$ , \,\, Kostas Mavromatis$^{b}$ , \,\, Tolga Ozden$^{a}$ , \,\, Mei Zhu$^{c}$\footnote{\indent\emph{E-mail addresses:} {C.H.Hommes@uva.nl, K.Mavromatis@dnb.nl, T.Ozden@uva.nl \,\,\,Zhu.Mei@mail.shufe.edu.cn}}\\
+{\footnotesize $^{a}$ CeNDEF, School of Economics, University of Amsterdam}\\
+{\footnotesize  and Tinbergen Institute, Netherlands} \\
+%{\footnotesize  Roetersstraat 11, 1018 WB Amsterdam, Netherlands} \\
+{\footnotesize $^{b}$ Dutch Central Bank, The Netherlands}\\
+{\footnotesize  $^{c}$ Institute for Advanced Research \& School of Economics, Shanghai University of Finance and Economics,} \\
+{\footnotesize and the Key Laboratory of Mathematical
+Economics(SUFE), Ministry of Education, Shanghai 200433, China}}
+
+%\date{}
+
+\date{\today}
+\maketitle
+%------------------------------------------------------------------------------------------
+%%------------------------------------------------------------
+\begin{center}
+%------------------------------------------------------------
+%\begin{minipage}{120mm} %\vskip 0.8in
+%%-------------------------------------------%----------------
+%\begin{center}{\bf Abstract}\end{center}
+%-----------------------------------------------------------
+%\newpage
+\renewcommand{\baselinestretch}{1.1}
+\begin{abstract}
+\noindent
+We generalize the concept of behavioral learning equilibrium (BLE) to a high dimensional linear system and apply it to the standard New Keynesian model. For each endogenous variable in the economy, boundedly rational agents use a simple, but optimal AR(1) forecasting rule with parameters consistent with the observed sample mean and autocorrelation of past data.  Agents do not fully recognize the complex structure of the economy, but learn to use an optimal parsimonious AR(1) rule, which satisfies the orthogonality condition for RE. We find that BLE exists, under general stationarity conditions, typically with near unit root autocorrelation parameters. BLE thus exhibits a novel feature, persistence amplification: the persistence in inflation and output gap is much higher than the persistence in exogenous shocks. We provide a general framework estimate a BLE. We illustrate our approach on U.S. data and show that the standard New Keynesian model fits aggregate data better under BLE than RE. We analyze optimal monetary policy under BLE and 
+% we find that a finite optimal Taylor rule exits for a range of calibrations, and 
+we find that the transmission channel of monetary policy is stronger under BLE at the estimated parameter values.  
+
+
+\renewcommand{\baselinestretch}{1.4}
+
+\noindent{\emph{JEL classification:}} C11; E62; E03; D83; D84 \vskip0.5cm
+
+\noindent{\emph{Keywords:}} Bounded rationality; Behavioral learning equilibrium; Adaptive learning; behavioral New Keynesian macro-model; Monetary Policy.
+
+
+\subsubsection*{Acknowledgements}
+\renewcommand{\baselinestretch}{0.6}
+\vskip 1cm
+\noindent{\small {\bf Acknowledgements.} Earlier versions of this paper have been presented at the Computation in Economics and Finance (CEF) conference, June 20-22, 2015, Taipei, Taiwan, the Workshop Expectations in Dynamic Macroeconomic Models,  August 13-15 2015, University of Oregon, USA,  the Workshop on Agent-Based and DSGE Macroeconomic Modeling: Bridging the Gap, November 20, 2015, Surrey, UK and the CEF2017 conference, June 28-30, 2017, New York.  Stimulating discussions and comments from Klaus Adam, Bill Branch, Jim Bullard, George Evans, Stephanie Schmitt-Groh\'{e}, Paul Levine, Domenico Massaro, Bruce McGough, Bruce Preston, Gianluca Violante   and Mike Woodford are gratefully acknowledged. The research leading to these results has received funding from the European Community's Seventh Framework Programme (FP7/2007-2013) under grant agreement ``Integrated Macro-Financial Modeling for Robust Policy Design (
+MACFINROBODS)", grant no. 612796. Mei Zhu also acknowledges financial support from NSFC funding Studies on equilibria of heterogeneous agents models under adaptive learning (grant no. 11401365), NSFC (71541018) and China Scholarship Council (file no. 201506485009)}
+%MACFINROBODS)", grant no. 612796. Mei Zhu also acknowledges financial support from NSFC funding ��Studies on equilibria of heterogeneous agents models under adaptive learning (grant no. 11401365), NSFC (71541018) and China Scholarship Council (file no. 201506485009)}.
+\renewcommand{\baselinestretch}{1.4}
+
+
+\end{abstract}
+
+
+%------------------------------------------------------------
+%\end{minipage}
+%%------------------------------------------------------------
+\end{center}
+%------------------------------------------------------------
+%--------------------------------------------------------------------------------
+
+\input{introduction.tex} 
+\input{ble_framework.tex}
+\input{main_results.tex}
+\input{iterative_estability.tex}
+\input{application_nkm.tex}
+\input{estimation_ble.tex}
+%\input{estimation_dgl.tex} \\
+%\input{optimal_mp_contemp.tex}
+\input{optimal_mp_updated.tex}
+\input{conclusion.tex}
+
+
+%%\input{optimal_mp_alternative.tex}\\
+\input{appendix}
+
+\input{bibliography.tex}
+
+
+
+
+
+
+
+
+
+\end{document}

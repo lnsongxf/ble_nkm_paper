@@ -1,0 +1,155 @@
+\section{BLE in a Multivariate Framework}
+\label{sect:ble_multi}
+Hommes and Zhu (2014) introduced BLE in the simplest setting, a one-dimensional linear stochastic model driven by an exogenous linear stochastic AR(1) process. In this paper we generalize BLE to  $n$-dimensional (linear) stochastic models driven by exogenous linear stochastic AR(1) processes of multiple shocks. To ease the exposition we initially follow the presentation in Hommes and Zhu (2014), but generalize their 1-dimensional model to an $n$-dimensional framework. In addition, most macroeconomic models include lagged state variables through features such as interest rate smoothing, habit formation in consumption or indexation in prices and wages. Therefore, we further extend our model with lagged state variables.
+
+Let the law of motion of an economic system be given by the stochastic difference equation
+\begin{eqnarray}\label{xl}
+{\pmb x}_t&=&{\pmb F}({\pmb x}_{t+1}^e,\,\,{\pmb x}_{t-1},\,\, {\pmb u}_t,\,\,\,{\pmb v}_t),
+%Y_t&=&a+\rho Y_{t-1}+\varepsilon_t
+\end{eqnarray}
+where ${\pmb x}_t$ is an $n\times1$ vector of endogenous variables denoted by
+$[x_{1t},x_{2t},\cdots,x_{nt}]'$ and ${\pmb x}_{t+1}^e$ is the
+expected value of $\pmb x$ at date $t+1$. This notation highlights that
+expectations may not be rational. Here $\pmb F$ is a continuous
+$n$-dimensional vector function, ${\pmb u}_t$ is a vector of exogenous stationary variables and % which we assume to follow a stationary VAR(1) process
+$\pmb v_t$ is a vector of white noise disturbances.
+
+
+Agents are boundedly rational and do not know the exact form of the actual law of motion (\ref{xl}). They only use a simple,
+parsimonious forecasting model where agents' perceived law of motion (PLM) is a simple univariate AR(1) process for each variable to be forecasted. As shown in Enders (2010, p.84-85), coefficient uncertainty increases as the model becomes more complex, and hence it could be that an estimated AR(1) model forecasts a real ARMA(2,1) process better than an estimated ARMA(2,1) model. Numerous empirical studies also show
+that overly parsimonious models with little parameter  uncertainty can provide better forecasts than models consistent with the actual data-generating complex process (e.g. Nelson, 1972; Stock and Watson,
+2007; Clark and West, 2007). %simple, parsimonious models such as low order autoregressive models often empirically outperform more complex models in out-of-sample forecasting (e.g. Nelson, 1972;
+%Stock and Watson, 2007;  and Enders, 2010).
+Thus agents' perceived law of motion (PLM) is assumed to be the simplest VAR model with minimum parameters, i.e. a restricted VAR(1) process
+\begin{equation}\label{xplm}
+{\pmb x}_t=\pmb{\alpha}+{\pmb\beta}({\pmb x}_{t-1}-{\pmb\alpha})+{\pmb\delta}_t,
+\end{equation}
+where $\pmb\alpha$ is a vector denoted by $[\alpha_1,
+\alpha_2,\cdots, \alpha_n]'$, $\pmb\beta$ is a diagonal matrix\footnote{Chung and Xiao (2014) also argue using simulations that the simple AR(1) model is more likely to prevail in reality because of limited information restrictions when they model predictions in a two dimensional New Keynesian model. In addition, as far as prediction is concerned, based on our numerous empirical analyses, the short-term forecasts based on an AR(1) model are better than more general VAR models in most cases, because in more general VAR models too many parameters need to be estimated and hence coefficient uncertainty increases.% Of course, general VAR models have other advantages, such as studying impulse response of other shocks. %Furthermore, our analyses based on one-dimensional systems also indicate that the persistence and volatility at the BLE using AR(1) PLM are higher than those using AR(2) (in this case BLE is equal to the second-order Stochastic Consistent Expectations Equilibrium (SCEE)).
+}
+denoted by $\left[\begin{array}{cccc}
+\beta_1&0&\cdots&0\\
+0&\beta_2&\cdots&0\\
+\cdots&&&\\
+0&0&\cdots&\beta_n
+\end{array}\right]$
+with $\beta_i\in(-1,1)$ and $\{\pmb\delta_t\}$ is a white noise process; $\pmb\alpha$ is the
+unconditional mean of $\pmb x_t$ and $\beta_i$ is the first-order
+autocorrelation coefficient of variable $x_i$. Given the perceived law
+of motion (\ref{xplm}), the 2-period ahead forecasting rule for
+$\pmb x_{t+1}$ that minimizes the mean-squared forecasting error is
+\begin{equation}\label{xpre}
+\pmb x^e_{t+1}=\pmb{\alpha+\beta^2(x_{t-1}-\alpha)}.
+\end{equation}
+Combining the expectations (\ref{xpre}) and the law of motion of the
+economy (\ref{xl}), we obtain the implied actual law of motion (ALM)
+\begin{equation}\label{xalm}
+{\pmb x}_t={\pmb F}({\pmb\alpha}+{\pmb\beta}^2({\pmb x}_{t-1}-{\pmb\alpha}), \,\,{\pmb x}_{t-1},\,\,{\pmb u}_t,\,\,\,{\pmb v}_t).
+\end{equation}
+%with $\pmb u_t$ an AR(1) process as in (\ref{div}).
+
+In the case that the ALM (\ref{xalm}) is stationary, let the variance-covariance matrix  ${\pmb\Gamma}(0):=E[({\pmb x}_t-{\pmb{\overline x}})({\pmb x}_{t}-{\pmb{\overline x}})']$ and the first order autocovariance matrix ${\pmb\Gamma}(1):=E[({\pmb x}_t-{\pmb{\overline x}})({\pmb x}_{t+1}-{\pmb{\overline x}})']$, where $\overline{\pmb x}$ is the mean of ${\pmb x}_t$. Let ${\pmb \Omega}$ be the diagonal matrix in which the $i$th diagonal element is the variance of the $i$th process, that is ${\pmb \Omega}=\mbox{diag}[\gamma_{11}(0), \gamma_{22}(0), \cdots, \gamma_{nn}(0)]$, where $\gamma_{ii}(0)$ is the $i$th diagonal entry of ${\pmb\Gamma}(0)$. Let ${\pmb L}$ be the diagonal matrix in which the $i$th diagonal element is the first-order autocovariance of the $i$th process, that is ${\pmb L}=\mbox{diag}[\gamma_{11}(1), \gamma_{22}(1), \cdots, \gamma_{nn}(1)]$, where $\gamma_{ii}(1)$ is the $i$th diagonal entry of ${\pmb\Gamma}(1)$. Let ${\pmb G}$ denote the diagonal matrix in which the $i$th diagonal element is the first-order autocorrelation coefficient of the $i$th process $x_{i,t}$. Hence
+\begin{eqnarray}\label{corrG}
+{\pmb G}={\pmb L}{\pmb \Omega}^{-1}.
+\end{eqnarray}
+
+
+\subsubsection*{Behavioral Learning Equilibrium (BLE)}
+Extending Hommes and Zhu (2014), the concept of BLE is generalized as
+follows.
+\begin{defn}
+A vector $(\mu, \pmb\alpha, \pmb\beta)$, where $\mu$ is a probability
+measure, $\pmb\alpha$ is a vector and $\pmb\beta$  is a diagonal matrix with
+ $\beta_i\in(-1,1)\,\,(i=1,2,\cdots,n)$, is called a behavioral learning equilibrium (BLE)  if the following three conditions are satisfied:
+\begin{itemize}
+\item[S1] The probability measure $\mu$ is a nondegenerate invariant
+measure for the stochastic difference equation (\ref{xalm});
+\item[S2] The stationary stochastic process defined by (\ref{xalm}) with the invariant
+measure $\mu$ has unconditional mean $\pmb\alpha$, that is,
+the unconditional mean of $x_i$ is $\alpha_i,\,\, (i=1,2,\cdots,n)$;
+\item[S3] Each element $x_i$ for the stationary stochastic process of $\pmb x$ defined by (\ref{xalm}) with the invariant
+measure $\mu$ has unconditional first-order autocorrelation
+coefficient $\beta_i, \,\, (i=1,2,\cdots,n)$, that is, ${\pmb G}={\pmb\beta}$.
+\end{itemize}
+\end{defn}
+In other words, a BLE is characterized by two natural observable
+consistency requirements: the unconditional means and the
+unconditional first-order autocorrelation coefficients generated by
+the actual (unknown) stochastic process (\ref{xalm}) coincide with
+the corresponding statistics for the perceived linear VAR(1) process
+(\ref{xplm}), as given by the parameters $\pmb\alpha$ and
+$\pmb\beta$. This means that in a BLE agents correctly perceive the
+two simplest and most important statistics: the mean and first-order
+autocorrelation (i.e., persistence) of each relevant variable of the economy,
+without fully understanding its structure and recognizing all
+explanatory variables and cross correlations. A BLE is \emph{parameter free}, as along a BLE the two parameters of each linear forecasting rule are pinned down by simple and observable statistics. Hence, agents do not fully understand the linear structure of the stochastic economy, e.g. they do not take the cross-correlation of state variables into account, but rather use a parsimonious univariate AR(1) forecasting rule for each state variable. A simple BLE may be a plausible outcome of the coordination process of expectations of a large population. Laboratory experiments within the New Keynesian framework also provide empirical evidence of the use of simple univariate AR(1) forecasting rules to forecast inflation and output gap (Adam, 2007; Pfajfar and Zakelj, 2016; Assenza et al., 2014).
+
+Furthermore, we note that along a BLE the orthogonality condition
+\begin{eqnarray*}
+&&E[x_{i,t}-\alpha_i-\beta_{i}(x_{i,t-1}-\alpha_i)]=0,\\
+&&E\{[x_{i,t}-\alpha_i-\beta_{i}(x_{i,t-1}-\alpha_i)]x_{i,t-1}\}=E\{[x_{i,t}-\alpha_i-\beta_{i}(x_{i,t-1}-\alpha_i)](x_{i,t-1}-\alpha_i)\}=0
+\end{eqnarray*}
+is satisfied. That is, the forecast $\alpha_i+\beta_i(x_{i,t-1}-\alpha_i)$ is the linear projection of $x_{i,t}$ on the vector $(1,x_{i,t-1})'$. For each variable, agents cannot detect the correlation between the forecasting error $x_{i,t}-\alpha_i-\beta_{i}(x_{i,t-1}-\alpha_i)$ and the vector $(1,x_{i,t-1})'$ in the forecast model. The linear projection produces the smallest mean squared error among the class of linear forecasting rules (e.g., Hamilton (1994). Therefore, for each variable agents use the optimal forecast within their class of univariate AR(1) forecasting rules (Branch, 2006).
+
+\subsubsection*{Sample autocorrelation learning}
+In the above definition of BLE, agents' beliefs are
+described by the linear forecasting rule (\ref{xpre}) with fixed
+parameters $\pmb\alpha$ and $\pmb\beta$. However, the parameters $\pmb\alpha$ and $\pmb\beta$ are usually unknown to agents. In the adaptive learning
+literature, it is common to assume that agents behave like
+econometricians using time series observations to estimate the
+parameters as new observations become available. Following
+Hommes and Sorger (1998), we assume that agents use sample
+autocorrelation learning (SAC-learning) to learn the parameters
+$\alpha_i$ and $\beta_i, \,\,i=1,2,\cdots,n$. That is, for any finite set of observations
+$\{x_{i,0}, x_{i,1},\cdots,x_{i,t}\}$, the sample average is given by
+\begin{equation}\label{sacalpha}
+\alpha_{i,t}=\frac{1}{t+1}\sum_{k=0}^{t}x_{i,k},
+\end{equation}
+and the first-order sample autocorrelation coefficient is given by
+\begin{equation}\label{sacbeta}
+\beta_{i,t}=\frac{\sum_{k=0}^{t-1}(x_{i,k}-\alpha_{i,t})(x_{i,k+1}-\alpha_{i,t})}{\sum_{k=0}^{t}(x_{i,k}-\alpha_{i,t})^2}.
+\end{equation}
+Hence $\alpha_{i,t}$ and $\beta_{i,t}$ are updated over time as new
+information arrives. It is  easy to check that, independently of the
+choice of the initial values $(x_{i,0}, \alpha_{i,0}, \beta_{i,0})$, it always
+holds that $\beta_{i,1}=-\frac{1}{2}$, and that the first-order sample
+autocorrelation $\beta_{i,t}\in[-1,1]$ for all $t\geq 1$.
+
+As shown in Hommes and Zhu (2014), define
+\begin{equation*}
+R_{i,t}=\frac{1}{t+1}\sum_{k=0}^{t}(x_{i,k}-\alpha_{i,t})^2.
+\end{equation*}
+Then the SAC-learning is equivalent to  the following recursive
+dynamical system\footnote{The system in (\ref{lr}) is a decreasing gain algorithm, where all observations receive equal weight and therefore the weight on the latest observation decreases as the sample size grows. There is also a constant gain correspondence of SAC-learning,
+ where past observations are discounted at a geometric rate. This can be obtained by replacing the weights $\frac{1}{t+1}$ by some positive constant $\kappa$, see the online appendix to Hommes \& Zhu (2014) for further details.}
+
+
+%Denoting  by $\kappa$ the gain value, the constant gain version under SAC-learning is given by: \\
+%$$
+%\begin{cases}
+%\alpha_t=\alpha_{t-1}+\kappa(x_t-\alpha_{t-1})\\,
+%\beta_t=\beta_{t-1}+\kappa R_t^{-1}[(x_t-\alpha_{t-1})(x_{t-1}-\alpha_{t-1})-\beta_{t-1}(x_t-\alpha_{t-1})^2],\\
+%R_t=R_{t-1}+\kappa[(x_t-\alpha_{t-1})^2-R_{t-1}].
+%\end{cases}
+%$$
+%See the online appendix of Hommes \& Zhu (2014) for more details.
+
+\begin{equation}\label{lr}
+    \left\{
+    \begin{split}
+\alpha_{i,t}&=\alpha_{i,t-1}+\frac{1}{t+1}(x_{i,t}-\alpha_{i,t-1}), \\
+\beta_{i,t}&=\beta_{i,t-1}+\frac{1}{t+1}R_{i,t}^{-1}\Big[(x_{i,t}-\alpha_{i,t-1})\big(x_{i,t-1}+\frac{x_{i,0}}{t+1}-\frac{t^2+3t+1}{(t+1)^2}\alpha_{i,t-1}-\frac{1}{(t+1)^2}x_{i,t}\big)\\
+& -\frac{t}{t+1}\beta_{i,t-1}(x_{i,t}-\alpha_{i,t-1})^2\Big],\\
+R_{i,t}&=R_{i,t-1}+\frac{1}{t+1}\Big[\frac{t}{t+1}(x_{i,t}-\alpha_{i,t-1})^2-R_{i,t-1}\Big].
+\end{split}
+    \right.
+    \end{equation}
+The actual law of motion under SAC-learning is therefore given by
+\begin{equation}\label{xsac}
+     {\pmb  x}_{t}=\pmb{F}( {\pmb \alpha}_{t-1}+ {\pmb \beta}^2_{t-1}( {\pmb x}_{t-1}- {\pmb \alpha}_{t-1}),\,\,{\pmb x}_{t-1},\,\, {\pmb u}_t,
+      \,\, {\pmb v}_t),
+\end{equation}
+with $\alpha_{i,t}$, $ \beta_{i,t}$ as in (\ref{lr}).% and $\pmb u_t$ as in
+%(\ref{div}).
+
+In Hommes and Zhu (2014), $F$ is a one-dimensional linear function. In this paper $\pmb F$ may be an $n$-dimensional linear vector function and includes the lagged term ${\pmb x}_{t-1}$.

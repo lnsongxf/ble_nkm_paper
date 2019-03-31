@@ -1,0 +1,153 @@
+\subsection{Main results in a multivariate linear framework}\label{sec:lin}
+Assume that a reduced form model is an $n$-dimensional linear stochastic process $\pmb x_t$, driven by an
+exogenous VAR(1) process $\pmb u_t$. More precisely, the actual law of
+motion of the economy is given by
+%\footnote{As shown in Section \ref{sec:iterative_ble} Our results on BLE still hold for the more general model including the term of lagged ${\pmb x}_{t-1}$ in the RHS of Eq. (\ref{xf1}).}
+\begin{eqnarray}
+{\pmb x}_t&=&\pmb{F}( {\pmb x}_{t+1}^e, \,\, {\pmb u}_t, \,\, {\pmb v}_t)={\pmb b}_0+{\pmb b}_1{\pmb x}_{t+1}^e+ {\pmb b}_2{\pmb x}_{t-1}+{\pmb b}_3{\pmb u}_t + {\pmb b}_4{\pmb v}_t,\label{xf1}\\
+\pmb{u}_t&=&\pmb{a}+\pmb{\rho}\pmb{u}_{t-1}+{\pmb\varepsilon}_t, \label{div2}
+\end{eqnarray}
+where ${\pmb x}_t$ is an $n\times1$ vector of endogenous variables, ${\pmb b}_0$ and $\pmb{a}$ are vectors of constants, ${\pmb b}_1, {\pmb b}_2$ and ${\pmb b}_4$ are $n\times n$ matrices of coefficients,  ${\pmb b}_3$ is an $n\times m$ matrix, ${\pmb \rho}$ is an $m\times m$ matrix, ${\pmb u}_t$ is an $m\times 1$ vector of exogenous variables which is assumed to follow a stationary VAR(1) as  in (\ref{div2}), and ${\pmb v}_t$ is an $n\times 1$ vector of i.i.d. stochastic disturbance terms with mean
+zero and finite absolute moments, with variance-covariance matrix
+$\pmb{\Sigma_{\pmb v}}$. Hence all of the eigenvalues of $\pmb\rho$ are assumed to be inside the unit circle. %In order to study BLE and REE more conveniently, we also assume all of the eigenvalues of ${\pmb b}_1$ lie inside the unit circle\footnote{In the case when ${\pmb b}_1$ has an eigenvalue outside the unit circle a typical time series will be exploding under naive expectations ${\pmb x}_{t+1}^e = {\pmb x}_{t-1}$. BLE under an AR(1) rule and SAC-learning then typically become non-stationary and exploding.}.
+In addition, ${\pmb\varepsilon}_t$ is assumed to be an $m\times 1$ vector of i.i.d. stochastic disturbance terms with mean
+zero and finite absolute moments, with variance-covariance matrix
+$\pmb{\Sigma_\varepsilon}$ and is independent of ${{\pmb v}_t}$.
+
+\subsection*{Rational expectations equilibrium}
+Assume that agents are rational. The  perceived law of motion (PLM) corresponding to the minimum state variable REE of the model is:
+\begin{eqnarray}
+{\pmb x}_t^*={\pmb c}_0+{\pmb c}_1{\pmb x}_{t-1}^*+{\pmb c}_2 {\pmb u}_t+{\pmb c}_3{\pmb v_t}.
+\end{eqnarray}
+Assuming that shocks ${\pmb u}_t$ are observable when forecasting ${\pmb x}_{t+1}$,  the one-step ahead forecast is:
+\begin{eqnarray}
+{ E}_t{\pmb x}_{t+1}^*={\pmb c}_0+{\pmb c}_2{\pmb a}+{\pmb c}_1{\pmb x}_{t}^*+{\pmb c}_2{\pmb\rho} {\pmb u}_t,
+\end{eqnarray}
+and the corresponding actual law of motion is:
+\begin{eqnarray}
+{\pmb x}_t^*={\pmb b}_0+{\pmb b}_1({\pmb c}_0+{\pmb c}_2{\pmb a}+{\pmb c}_1{\pmb x}_{t}^*+{\pmb c}_2{\pmb\rho} {\pmb u}_t)+ {\pmb b}_2{\pmb x}_{t-1}+{\pmb b}_3{\pmb u}_t + {\pmb b}_4{\pmb v}_t.
+\end{eqnarray}
+The rational expectations equilibrium (REE) is the fixed point of
+\begin{eqnarray}
+{\pmb c}_0-{\pmb b}_1{\pmb c}_1{\pmb c}_0-{\pmb b}_1{\pmb c}_0&=&{\pmb b}_0+{\pmb b}_1{\pmb c}_2{\pmb a},\label{reec0}\\
+{\pmb c}_1-{\pmb b}_1{\pmb c}_1^2&=&{\pmb b}_2,\label{reec1}\\
+{\pmb c}_2-{\pmb b}_1{\pmb c}_1{\pmb c}_2-{\pmb b}_1{\pmb c}_2{\pmb \rho}&=&{\pmb b}_3,\label{reec2}\\
+{\pmb c}_3-{\pmb b}_1{\pmb c}_1{\pmb c}_3&=&{\pmb b}_4.\label{reec3}
+\end{eqnarray}
+A straightforward computation (see Appendix \ref{appA}) shows that the mean of the REE $\overline{\pmb x^*}$ satisfies
+\begin{eqnarray}\label{nreem}
+\overline {\pmb x^*}=({\pmb I}-{\pmb b}_1-{\pmb b}_2)^{-1}[\pmb b_0+\pmb b_3\pmb{(I-\pmb\rho)^{-1}a}],
+\end{eqnarray}
+where $\pmb I$ denotes a comfortable identity matrix throughout the paper. In the special case with ${\pmb \rho}=\rho{\pmb I}$ \footnote{Note that $\pmb
+\rho$ is a matrix while $\rho$ is a scalar number throughout the paper.} and ${\pmb b}_2={\pmb 0}$, the rational
+expectations equilibrium ${\pmb x}_t^*$ satisfies
+\begin{eqnarray}\label{xstar0}
+{\pmb x}_t^*=(\pmb I-{\pmb b}_1)^{-1}{\pmb b}_0+(\pmb I-{\pmb b}_1)^{-1}{\pmb b}_1(\pmb I-\rho{\pmb b}_1)^{-1}{\pmb b}_3{\pmb a}+(\pmb I-\rho{\pmb b}_1)^{-1}{\pmb b}_3{\pmb u}_t+{\pmb b}_4{\pmb v}_t.
+\end{eqnarray}
+Thus its unconditional mean is:
+\begin{eqnarray}\label{mxree}
+\overline{\pmb x^*}={ E}
+({\pmb x}^*_t)=(1-\rho)^{-1}({\pmb I}-{\pmb b}_1)^{-1}[{\pmb b}_0(1-\rho)+{\pmb b}_3\pmb a].
+\end{eqnarray}
+Its variance-covariance matrix is:
+\begin{eqnarray}\label{mxreev}
+\pmb\Sigma_{\pmb x^*} = E[({\pmb x}^*_t-\overline{{\pmb x}^*})({\pmb x}^*_t-\overline{{\pmb x}^*})^{'}]={(1-\rho^2)^{-1}}({\pmb I}-\rho{\pmb b}_1)^{-1}{\pmb b}_3\pmb{\Sigma_{\pmb\varepsilon}}[({\pmb I}-\rho{\pmb b}_1)^{-1}{\pmb b}_3]^{'}+{\pmb b}_4\pmb{\Sigma_{ v}}{\pmb b}'_4.
+\end{eqnarray}
+Furthermore, the first-order autocovariance is
+\begin{eqnarray}\label{mxreev}
+\pmb\Sigma_{{\pmb x}^*{\pmb x}^*_{-1}}= E[({\pmb x}^*_t-\overline{{\pmb x}^*})({\pmb x}^*_{t-1}-\overline{{\pmb x}^*})^{'}]=\rho(1-\rho^2)^{-1}({\pmb I}-\rho{\pmb b}_1)^{-1}{\pmb b}_3\pmb{\Sigma_{\pmb\varepsilon}}[({\pmb I}-\rho{\pmb b}_1)^{-1}{\pmb b}_3]^{'}.
+\end{eqnarray}
+The first-order autocorrelation of the $i$-element $x_i^*$ of $\pmb x^*$ is the $i$-th diagonal element of matrix $\pmb\Sigma_{{\pmb x}^*{\pmb x}^*_{-1}}$ divided by the corresponding $i$-th diagonal element of matrix $\pmb\Sigma_{\pmb x^*}$. Furthermore, if $\pmb{\Sigma_{\pmb v}}=\pmb 0$, then the first-order autocorrelation of the $i$-element $u_i$ of $\pmb u$ is equal to $\rho$. In this case
+the persistence of the $i$-th variable $x_i^*$ in the REE
+coincides exactly with the persistence of the exogenous driving force $u_{i,t}$. That is, in this case the persistence in the REE only inherits the persistence of the exogenous driving force.
+
+\subsection*{Existence of BLE}
+\label{sec:exist} %\noindent
+Now assume that agents are boundedly rational and do not believe or recognize that the economy is driven by an exogenous VAR(1) process ${\pmb u}_t$, but use a simple univariate linear rule to
+forecast the state ${\pmb x}_t$ of the economy. Given that agents'
+perceived law of motion is a restricted VAR(1) process as in (\ref{xplm}), the actual
+law of motion becomes
+\begin{eqnarray}\label{xfalm}
+{\pmb x}_t={\pmb b}_0+{\pmb b}_1[\pmb\alpha+{\pmb\beta}^2({\pmb x}_{t-1}-\pmb\alpha)]+ {\pmb b}_2{\pmb x}_{t-1}+{\pmb b}_3{\pmb u}_t + {\pmb b}_4{\pmb v}_t,
+\end{eqnarray}
+with ${\pmb u}_t$ given in (\ref{div2}). If all eigenvalues of ${\pmb b}_1{\pmb\beta}^2+{\pmb b}_2$, for each $\beta_i\in[-1,1],  1 \leq i \leq n $, lie inside the unit circle, then the system (\ref{xfalm}) of ${\pmb x}_t$ is stationary and hence its mean $\overline{\pmb x}$ and first-order autocorrelation $\pmb G$ exist.
+
+The mean of $\pmb x_t$ in
+(\ref{xfalm}) is computed as
+\begin{eqnarray}\label{xfmn}
+\overline {\pmb x}=(\pmb I-{\pmb b}_1{\pmb\beta}^2-{\pmb b}_2)^{-1}[ {\pmb b}_0+{\pmb b}_1\pmb\alpha-{\pmb b}_1\pmb\beta^2\pmb\alpha+{\pmb b}_3
+(\pmb I-\pmb \rho)^{-1}\pmb a].
+\end{eqnarray}
+Imposing the first consistency requirement of a BLE on the mean,
+i.e. $\overline {\pmb x}=\pmb\alpha$, and solving for $\pmb\alpha$ yields
+\begin{equation}\label{sceex}
+\pmb\alpha^*=({\pmb I}-{\pmb b}_1-{\pmb b}_2)^{-1}[{\pmb b}_0+{\pmb b}_3({\pmb I}-{\pmb\rho})^{-1}{\pmb a}].
+\end{equation}
+Comparing with (\ref{nreem}), we conclude that in a BLE the
+unconditional mean $\pmb\alpha^*$  coincides with the REE mean. That is
+to say, in a BLE the state of the economy ${\pmb x}_t$ fluctuates on
+average around its RE fundamental value ${\pmb x}^*$.
+
+Consider the second consistency requirement of a BLE on the first-order autocorrelation coefficient matrix $\pmb\beta$ of the PLM. The second consistency requirement yields
+\begin{equation}
+\label{betacons} {\pmb G}({\pmb{\beta}})={\pmb{\beta}}.
+\end{equation}
+Recall from Section 2, both $\pmb G$ and $\pmb\beta$ are diagonal matrices. For convenience let $G_i$ denote the $i$-th diagonal element of the matrix $\pmb G$ in (\ref{corrG}). Under the assumption that all of the eigenvalues of ${\pmb b}_1{\pmb\beta}^2+{\pmb b}_2$ for each $\beta_i\in[-1,1] (i=1,2,\cdots,n)$ lie inside the unit circle, from the theory of stationary linear time series, $G_i(\beta_1,\beta_2,\cdots,\beta_n)\in[-1,1]$ and is a smooth function with respect to $(\beta_1,\beta_2,\cdots,\beta_n)$ and other model parameters, see Appendix \ref{ACFn}\footnote{For example, refer to the expression (3.9) in Hommes and Zhu (2014) for the special 1-dimensional case $n=1$ and ${\pmb b}_2={\pmb 0}$. In Section~\ref{sec:NKmodel} we consider the New Keynesian model with two forward-looking variables and compute the (complicated) expressions of $G_1(\beta_1,\beta_2)$ and $G_2(\beta_1,\beta_2)$ explicitly.}. Based on Brouwer's fixed-point theorem for $(G_1, G_2, \cdots,G_n)$,
+there exists ${\pmb \beta}^*=(\beta_1^*, \beta_2^2,\cdots, \beta_n^*)$ with each $\beta_i^*\in[-1,1]$, such that ${\pmb G}({\pmb{\beta^{*}}})={\pmb{\beta^{*}}}$. We conclude:
+
+
+\begin{prop}
+\label{prop:exist} If all eigenvalues of $\pmb\rho$ and ${\pmb b}_1{\pmb\beta}^2+{\pmb b}_2$, for each $\beta_i\in[-1,1]$, are inside the unit circle\footnote{The Schur-Cohn criterion theorem provides necessary and sufficient conditions for all eigenvalues to lie inside the unit circle, see Elaydi (1999). For specific models, one may find sufficient conditions to guarantee that all eigenvalues of ${\pmb b}_1{\pmb\beta}^2+{\pmb b}_2$, for each $\beta_i\in[-1,1]$, are inside the unit circle. For example, in the case of the NK model, the Taylor principle is a sufficient condition to ensure that all eigenvalues lie inside the unit circle for all $\beta_i\in[-1,1]$; see Corollary \ref{cor:exis} and Appendix \ref{apdix_deter}.}, there exists at least one behavioral learning equilibrium $(\pmb\alpha^*,\pmb\beta^*)$ for the economic system (\ref{xfalm})
+with $\pmb\alpha^*=({\pmb I}-{\pmb b}_1-{\pmb b}_2)^{-1}[{\pmb b}_0+{\pmb b}_3({\pmb I}-{\pmb\rho})^{-1}{\pmb a}]=\overline{\pmb x^*}$.
+\end{prop}
+
+
+
+
+
+\subsection*{Stability under SAC-learning}
+In this subsection we study the stability of BLE under
+SAC-learning. The ALM of the economy under SAC-learning is given by
+\begin{equation}\label{modelmpnsacx}
+    \left\{
+    \begin{split}
+          {\pmb x}_t&={\pmb b}_0+{\pmb b}_1[\pmb\alpha_{t-1}+{\pmb\beta}^2_{t-1}(\pmb x_{t-1}-\pmb\alpha_{t-1})]+ {\pmb b}_2{\pmb x}_{t-1}+{\pmb b}_3{\pmb u}_t + {\pmb b}_4{\pmb v}_t,\\
+           \pmb{u}_t&=\pmb{a}+\pmb{\rho}\pmb{u}_{t-1}+\pmb{\varepsilon}_t.
+    \end{split}
+    \right.
+    \end{equation}
+with $\pmb\alpha_t$, $\pmb\beta_t$ updated based on realized sample average
+and sample autocorrelation as in (\ref{lr}). Appendix \ref{sac} shows that
+the E-stability principle applies and that stability under
+SAC-learning is determined by the associated ordinary differential
+equation (ODE)\footnote{See Evans and Honkapohja (2001) for a
+discussion and mathematical treatment of E-stability.}
+\begin{equation}\label{ODEn}
+    \left\{
+    \begin{split}
+          \frac{d\pmb\alpha}{d\tau}&=
+          \overline{\pmb x}(\pmb\alpha,\pmb\beta)-\pmb\alpha =
+          (\pmb I-{\pmb b}_1{\pmb\beta}^2-{\pmb b}_2)^{-1}[ {\pmb b}_0+{\pmb b}_1\pmb\alpha-{\pmb b}_1\pmb\beta^2\pmb\alpha+{\pmb b}_3
+(\pmb I-\pmb \rho)^{-1}\pmb a]-\pmb\alpha, \\
+\frac{d{\pmb\beta}}{d\tau}&={\pmb G}({\pmb\beta})-{\pmb\beta},
+    \end{split}
+    \right.
+\end{equation}
+where $\overline{\pmb x}(\pmb\alpha,\pmb\beta)$ is the mean
+given by (\ref{xfmn}) and ${\pmb G}({\pmb\beta})$ is the diagonal first-order
+autocorrelation matrix. A BLE $(\pmb\alpha^*,{\pmb\beta}^*)$ corresponds to a
+fixed point of the ODE (\ref{ODEn}). Moreover, a BLE
+$(\pmb\alpha^*,{\pmb\beta}^*)$ is locally stable under SAC-learning
+if it is a stable fixed point of the ODE (\ref{ODEn}). Therefore, we have the following property of SAC-learning stability.
+
+\begin{prop}
+\label{prop:stab} A BLE $(\pmb\alpha^*,{\pmb\beta}^*)$ is locally
+stable (E-stable) under SAC-learning if
+\begin{enumerate}
+\item[(i)] all eigenvalues of $({\pmb I}-{\pmb b_1}{{\pmb \beta}^*}^2-{\pmb b}_2)^{-1}({\pmb b}_1+{\pmb b}_2-{\pmb I})$ have negative real parts\footnote{The  Routh-Hurwitz criterion theorem provides sufficient and necessary conditions for all the $n$ eigenvalues having negative real parts, see Brock and Malliaris (1989). }, and
+\item[(ii)] all eigenvalues of ${\pmb D}{\pmb G}_{\pmb\beta}(\pmb\beta^*)$ have real parts less than 1, where ${\pmb D}{\pmb G}_{\pmb\beta}$ is the Jacobian matrix with the $(i,j)$-th entry $\frac{\partial G_i}{\partial\beta_j}$.
+\end{enumerate}
+\end{prop}
+\textbf{Proof.} See Appendix \ref{sac}.
+
+Recall from Subsection~\ref{sec:exist} that $G_i(\beta_1,\beta_2,\cdots,\beta_n)\in(-1,1)$ so that at least one BLE exists. The proposition above implies that the BLE may also be E-stable under SAC-learning.
